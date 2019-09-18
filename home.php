@@ -14,7 +14,7 @@
     <title>Document</title>
 </head>
 <body>
-<div class="container">
+<div class="">
     <div class="jumbotron text-center" ">
     <div class="row">
         <div class="col-sm-12">
@@ -44,68 +44,43 @@
                 <a class="nav-link" href="#">Verzekeraar</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="over.php">Over ons</a>
+                <a class="nav-link" href="over.php">Contact</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Inloggen</a>
-            </li>
+
         </ul>
     </div>
 </nav>
 
-<div id="wrapper">
-    <main>
-        <h2>Info</h2>
+
+
 
         <div class="article">
 
-            <h2>Geldzaken</h2>
-            <img  id="geldzaken" src="foto/geldzaken.png" alt="foto">
-            <button type="button" class="btn btn-info">Info</button>
+            <h2>Dokter</h2>
+            <img  id="geldzaken" src="foto/Dokter.jpg" alt="foto">
+            <button type="button" class="btn btn-info">Inloggen</button>
         </div>
 
 
         <div class="article">
-            <h2>Zwangerschap</h2>
-            <img  id="geldzaken" src="foto/geldzaken.png" alt="foto">
-            <button type="button" class="btn btn-info">Info</button>
+            <h2>Apotheker</h2>
+            <img  id="geldzaken" src="foto/Apotheker.jpg" alt="foto">
+            <button type="button" class="btn btn-info">Inloggen</button>
         </div>
 
         <div class="article">
 
-            <h2>GGZ behandeling online</h2>
-            <img  id="geldzaken" src="foto/geldzaken.png" alt="foto">
-            <button type="button" class="btn btn-info">Info</button>
+            <h2>Verzekeraar</h2>
+            <img  id="geldzaken" src="foto/Verzekeraar.jpg" alt="foto">
+            <button type="button" class="btn btn-info">Inloggen</button>
         </div>
 
-        <h2>Vragen over uw zorgverzekering?</h2>
-
-        <div class="article">
-            <h2>Krijg ik een online GGZ behandeling vergoed?</h2>
-            <img  id="geldzaken" src="foto/geldzaken.png" alt="foto">
-            <button type="button" class="btn btn-info">Info</button>
-
-
-        </div>
-
-        <div class="article">
-            <h2>Kan ik tussentijds mijn verzekering aanpassen?</h2>
-            <img  id="geldzaken" src="foto/geldzaken.png" alt="foto">
-            <button type="button" class="btn btn-info">Info</button>
-
-
-        </div>
-        <div class="article">
-            <h2>Lagere vergoeding voor mondhygiënist en fluorbehandeling?</h2>
-            <img  id="geldzaken" src="foto/geldzaken.png" alt="foto">
-            <button type="button" class="btn btn-info">Info</button>
-        </div>
 
 <footer id="sticky-footer" class="py-4 bg-secondary text-white-50">
     <div class="container text-center">
         <small>Copyright &copy; Zilverenkruis</small>
     </div>
 </footer>
-</div>
+
 </body>
 </html>
