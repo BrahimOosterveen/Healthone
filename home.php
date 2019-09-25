@@ -6,16 +6,15 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="CSS/main.css">
     <link rel="stylesheet" type="text/css" href="CSS/homeb.css">
 
     <title>Document</title>
 </head>
 <body>
-<div class="">
-    <div class="jumbotron text-center" ">
+<div class="container">
+    <div class="jumbotron text-center">
     <div class="row">
         <div class="col-sm-12">
             <h1 class="text">Zilverenkruis</h1>
@@ -35,7 +34,7 @@
                 <a class="nav-link" href="index.php">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Apotheker</a>
+                <a class="nav-link" href="sub-apotheker.php">Apotheker</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Doctor</a>
@@ -50,30 +49,24 @@
         </ul>
     </div>
 </nav>
-
-
-
-
-        <div class="article">
-
-            <h2>Dokter</h2>
+        <div id="mid-container">
+        <div id="article" class="col-md-3">
             <img  id="geldzaken" src="foto/Dokter.jpg" alt="foto">
-            <button type="button" class="btn btn-info">Inloggen</button>
+            <h2>Dokter</h2>
+            <button type="button" class="btn btn-info btn-block">Inloggen</button>
         </div>
-
-
-        <div class="article">
+        <div id="article" class="col-md-3">
+            <img id="geldzaken" src="foto/Apotheker.jpg" alt="foto">
             <h2>Apotheker</h2>
-            <img  id="geldzaken" src="foto/Apotheker.jpg" alt="foto">
-            <button type="button" class="btn btn-info">Inloggen</button>
+            <button type="button" class="btn btn-info btn-block">Inloggen</button>
         </div>
-
-        <div class="article">
-
-            <h2>Verzekeraar</h2>
+        <div id="article" class="col-md-3">
             <img  id="geldzaken" src="foto/Verzekeraar.jpg" alt="foto">
-            <button type="button" class="btn btn-info">Inloggen</button>
+            <h2>Verzekeraar</h2>
+            <button type="button" class="btn btn-info btn-block">Inloggen</button>
         </div>
+        </div>
+</div>
 
 
 <footer id="sticky-footer" class="py-4 bg-secondary text-white-50">
@@ -81,6 +74,8 @@
         <small>Copyright &copy; Zilverenkruis</small>
     </div>
 </footer>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
 </html>
