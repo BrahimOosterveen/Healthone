@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="04973541-9fbd-4e8d-8acc-6651e97df950" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSS/main.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSS/sub-apotheker.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Healthone/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/databaseconnectie.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sub-apotheker.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSS/homeb.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/homeb.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/home.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sub-apotheker.php" beforeDir="false" afterPath="$PROJECT_DIR$/sub-apotheker.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -88,7 +81,7 @@
       <workItem from="1569230664296" duration="156000" />
       <workItem from="1569230825875" duration="84000" />
       <workItem from="1569231010303" duration="7822000" />
-      <workItem from="1569404338463" duration="4851000" />
+      <workItem from="1569404338463" duration="5522000" />
     </task>
     <servers />
   </component>
