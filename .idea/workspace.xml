@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="04973541-9fbd-4e8d-8acc-6651e97df950" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSS/sub-apotheker.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/sub-apotheker.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sub-apotheker.php" beforeDir="false" afterPath="$PROJECT_DIR$/sub-apotheker.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -81,7 +82,9 @@
       <workItem from="1569230664296" duration="156000" />
       <workItem from="1569230825875" duration="84000" />
       <workItem from="1569231010303" duration="7822000" />
-      <workItem from="1569404338463" duration="5522000" />
+      <workItem from="1569404338463" duration="6117000" />
+      <workItem from="1569485305281" duration="2639000" />
+      <workItem from="1569492170458" duration="1816000" />
     </task>
     <servers />
   </component>
