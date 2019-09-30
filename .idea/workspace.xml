@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="04973541-9fbd-4e8d-8acc-6651e97df950" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSS/sub-apotheker.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/sub-apotheker.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sub-apotheker.php" beforeDir="false" afterPath="$PROJECT_DIR$/sub-apotheker.php" afterDir="false" />
-    </list>
+    <list default="true" id="04973541-9fbd-4e8d-8acc-6651e97df950" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +17,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -30,6 +26,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1QjyyrGa9ORerUoW6HLRqMupICw" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -82,9 +79,9 @@
       <workItem from="1569230664296" duration="156000" />
       <workItem from="1569230825875" duration="84000" />
       <workItem from="1569231010303" duration="7822000" />
-      <workItem from="1569404338463" duration="6117000" />
-      <workItem from="1569485305281" duration="2639000" />
-      <workItem from="1569492170458" duration="1816000" />
+      <workItem from="1569404338463" duration="4851000" />
+      <workItem from="1569413344997" duration="10189000" />
+      <workItem from="1569828719907" duration="7803000" />
     </task>
     <servers />
   </component>

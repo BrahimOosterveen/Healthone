@@ -37,7 +37,7 @@
                 <a class="nav-link" href="sub-apotheker.php">Apotheker</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Doctor</a>
+                <a class="nav-link" href="sub-dokter.php">Dokter</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Verzekeraar</a>
@@ -49,22 +49,24 @@
         </ul>
     </div>
 </nav>
-        <div id="mid-container">
-        <div id="article" class="col-md-3">
+        <div id="container">
+            <div class="row">
+        <div id="article" class="col-md-4">
             <img  id="geldzaken" src="foto/Dokter.jpg" alt="foto">
             <h2>Dokter</h2>
             <button type="button" class="btn btn-info btn-block">Inloggen</button>
         </div>
-        <div id="article" class="col-md-3">
+        <div id="article" class="col-md-4">
             <img id="geldzaken" src="foto/Apotheker.jpg" alt="foto">
             <h2>Apotheker</h2>
             <button type="button" class="btn btn-info btn-block">Inloggen</button>
         </div>
-        <div id="article" class="col-md-3">
+        <div id="article" class="col-md-4">
             <img  id="geldzaken" src="foto/Verzekeraar.jpg" alt="foto">
             <h2>Verzekeraar</h2>
             <button type="button" class="btn btn-info btn-block">Inloggen</button>
         </div>
+            </div>
         </div>
 </div>
 

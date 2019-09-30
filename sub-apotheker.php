@@ -55,15 +55,15 @@
         <article>
             <?php
             include 'databaseconnectie.php';
-            $sql = "SELECT id, Naam, Achternaam, Geboortedatum, Medicijnen FROM Apotheker";
+            $sql = "SELECT id, Naam, Achternaam, Medicijnen FROM Apotheker";
             $result = mysqli_query($conn, $sql);
-            echo "<input type=\"text\" id=\"myInput\" onkeyup=\"myFunction()\" placeholder=\"Search for patient ID..\">";
+
             if($result = mysqli_query($conn, $sql)){
                 if(mysqli_num_rows($result) > 0){
                     echo "<table id=\"table-1\" class=\"table table-striped\">";
                     echo "<thead>";
                     echo "<tr>";
-                    echo "<th scope=\"col\">Patient #</th>";
+                    echo "<th scope=\"col\">id</th>";
                     echo "<th scope=\"col\">Voornaam</th>";
                     echo "<th scope=\"col\">Achternaam</th>";
                     echo "<th scope=\"col\">Medicijnen</th>";
@@ -102,7 +102,6 @@
         <small>Copyright &copy; Zilverenkruis</small>
     </div>
 </footer>
-<script src="JS/filteredSearch.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
