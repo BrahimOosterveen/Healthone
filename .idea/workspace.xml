@@ -3,12 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="04973541-9fbd-4e8d-8acc-6651e97df950" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/sub-apotheker.php" beforeDir="false" afterPath="$PROJECT_DIR$/sub-apotheker.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sub-dokter.php" beforeDir="false" afterPath="$PROJECT_DIR$/sub-dokter.php" afterDir="false" />
+=======
       <change beforePath="$PROJECT_DIR$/CSS/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CSS/overb.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/overb.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CSS/sub-apotheker.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/sub-apotheker.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JS/filteredSearch.js" beforeDir="false" afterPath="$PROJECT_DIR$/JS/filteredSearch.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/over.php" beforeDir="false" afterPath="$PROJECT_DIR$/over.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sub-apotheker.php" beforeDir="false" afterPath="$PROJECT_DIR$/sub-apotheker.php" afterDir="false" />
+>>>>>>> f1498a811baa130f00a63049036587df672782d5
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

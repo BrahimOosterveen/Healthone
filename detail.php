@@ -15,48 +15,48 @@
 
 <div class="container">
     <header>
-    <div class="jumbotron text-center">
-        <div class="row">
-            <div class="col-sm-12">
-                <h1 class="text">Zilverenkruis</h1>
-                <h3 class="text" style="color: grey;">Apotheker</h3>
+        <div class="jumbotron text-center">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h1 class="text">Zilverenkruis</h1>
+                    <h3 class="text" style="color: grey;">Apotheker</h3>
+                </div>
             </div>
         </div>
-    </div>
-    <nav class="navbar navbar-expand-sm bg-light navbar-light sticky-top">
-        <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <a class="navbar-brand" href="index.php">
-            <img class="navbrand" src="foto/Zilveren-Kruis-logo.png" alt="Logo" >
-        </a>
-        <div class="collapse navbar-collapse" id="collapse_target">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="home.php">Home</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Apotheker</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Doctor</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Verzekeraar</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="over.php">Contact</a>
-                </li>
+        <nav class="navbar navbar-expand-sm bg-light navbar-light sticky-top">
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="index.php">
+                <img class="navbrand" src="foto/Zilveren-Kruis-logo.png" alt="Logo" >
+            </a>
+            <div class="collapse navbar-collapse" id="collapse_target">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="home.php">Home</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Apotheker</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Doctor</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Verzekeraar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="over.php">Contact</a>
+                    </li>
 
-            </ul>
-        </div>
-    </nav>
+                </ul>
+            </div>
+        </nav>
     </header>
     <main>
         <article>
             <?php
             include 'databaseconnectie.php';
-            $sql = "SELECT id, Naam, Achternaam, Geboortedatum FROM Apotheker";
+            $sql = "SELECT id, Naam, Achternaam, Geboortedatum, Medicijnen, Beschrijving, Bijwerkingen FROM Apotheker WHERE id=" . $_GET['id'];
             $result = mysqli_query($conn, $sql);
 
             if($result = mysqli_query($conn, $sql)){
@@ -69,7 +69,10 @@
                     echo "<th scope=\"col\">Voornaam</th>";
                     echo "<th scope=\"col\">Achternaam</th>";
                     echo "<th scope=\"col\">Geboortedatum</th>";
-                    echo "<th scope=\"col\">Meer info</th>";
+                    echo "<th scope=\"col\">Medicijnen</th>";
+                    echo "<th scope=\"col\">Beschrijving</th>";
+                    echo "<th scope=\"col\">Bijwerkingen</th>";
+                    echo "<th scope=\"col\">Status</th>";
                     echo "</tr>";
                     echo "</thead>";
                     while($row = mysqli_fetch_array($result)){
@@ -78,8 +81,12 @@
                         echo "<td>" . $row['Naam'] . "</td>";
                         echo "<td>" . $row['Achternaam'] . "</td>";
                         echo "<td>" . $row['Geboortedatum'] . "</td>";
-                        echo "<td>
-                        <a href=detail.php?id=" . $row['id']. "><button class=\"btn btn-primary\" id=\"succesbtn-3\">Info</button></a>" . "</td>";
+                        echo "<td>" . $row['Medicijnen'] . "</td>";
+                        echo "<td>" . $row['Beschrijving'] . "</td>";
+                        echo "<td>" . $row['Bijwerkingen'] . "</td>";
+                        echo "<td>" . "<!--Add functionality to Succes & Danger buttons with PHP/JS-->
+                        <button class=\"btn btn-success\" id=\"succesbtn-3\" onclick=\"\">✔</button>
+                        <button class=\"btn btn-danger\" id=\"removebtn-3\">✖</button>" . "</td>";
                         echo "</tr>";
                     }
                     echo "</table>";
@@ -92,6 +99,7 @@
                 echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
             }
             ?>
+            <a href="sub-apotheker.php"><button class="btn btn-primary" id="succesbtn-3" onclick="">Vorige pagina</button></a>
             <p id="demo"></p>
         </article>
     </main>
