@@ -2,7 +2,7 @@ function myFunction() {
     // Declare variables
     var input, filter, table, tr, td, i, txtValue;
     input = document.getElementById("myInput");
-    filter = input.value.toUpperCase();
+    filter = input.value.toUpperCase().trim();
     table = document.getElementById("table-1");
     tr = table.getElementsByTagName("tr");
 
