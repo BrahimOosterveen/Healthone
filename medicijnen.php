@@ -40,11 +40,10 @@
                         <a class="nav-link" href="sub-apotheker.php">Apotheker</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Dokter</a>
+                        <a href="sub-dokter.php" class="nav-link dropdown-toggle" data-toggle="dropdown">Dokter</a>
                         <div class="dropdown-menu">
-                            <a href="#" class="dropdown-item">Medicijnen</a>
-                            <a href="#" class="dropdown-item">Drafts</a>
-                            <a href="#" class="dropdown-item">Sent Items</a>
+                            <a href="sub-dokter.php" class="dropdown-item">Dokter</a>
+                            <a href="medicijnen.php" class="dropdown-item">Medicijnen</a>
 
                         </div>
                     </li>

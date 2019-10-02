@@ -38,12 +38,11 @@
                     <li class="nav-item ">
                         <a class="nav-link" href="sub-apotheker.php">Apotheker</a>
                     </li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown active">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Dokter</a>
                         <div class="dropdown-menu">
+                            <a href="sub-dokter.php" class="dropdown-item">Dokter</a>
                             <a href="medicijnen.php" class="dropdown-item">Medicijnen</a>
-                            <a href="#" class="dropdown-item">Drafts</a>
-                            <a href="#" class="dropdown-item">Sent Items</a>
 
                         </div>
                     </li>
@@ -61,7 +60,9 @@
     <main>
         <article>
             <?php
+            session_start();
             include 'databaseconnectie.php';
+            include_once("db.php");
             $sql = "SELECT Patientnummer, Naam, Achternaam, Geboortedatum, telefoonnummer, medicijnen, medicijnenvullen FROM dokter";
             $result = mysqli_query($conn, $sql);
 
@@ -90,10 +91,10 @@
                         echo "<td>" . $row['Geboortedatum'] . "</td>";
                         echo "<td>" . $row['telefoonnummer'] . "</td>";
                         echo "<td>" . $row['medicijnenvullen'] . "</td>";
-                        echo "<td>" . "<input type=\"text\" id=\"Yeet\" placeholder=\"Vul medicijn in\"</td>";
-                        echo "<td>" . "<!--Add functionality to Succes & Danger buttons with PHP/JS-->
-                        <button class=\"btn btn-success\" id=\"succesbtn-3\" onclick=\"\">✔</button>
-                        <button class=\"btn btn-danger\" id=\"removebtn-3\">YEET</button>" . "</td>"; //✖
+                        echo "<form action=\"sub-dokter.php\" method=\"POST\">";
+                        echo "<td>" . " <input type=\"text\" name=\"medicijn_naam\" value=\"\" placeholder=\"medicijn\">
+                        <td><input class=\"btn btn-success\" type=\"submit\" name=\"Verzenden\" value=\"verzenden\" placeholder=\"verzenden\">" . "</td>";
+                        echo "</form>";
                         echo "</tr>";
                     }
                     echo "</tbody>";
@@ -107,35 +108,24 @@
                 echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
             }
 
-
-
-session_start();
-include_once("db.php");
-
-if (isset($_POST['name_first']) && isset($_POST['name_last'])){
-    if ($_POST['name_first'] != "" && $_POST['name_last'] != ""){
-        $first = $_POST['name_first'];
-        $last = $_POST['name_last'];
-        $sql_store = "INSERT into names (id, first, last) VALUES (NULL, '$first', '$last')";
+if (isset($_POST['medicijn_naam'])){
+    if ($_POST['medicijn_naam'] != ""){
+        $first = $_POST['medicijn_naam'];
+        $sql_store = "INSERT into names (id, first) VALUES (NULL, '$first')";
         $sql = mysqli_query($db, $sql_store) or die(mysqli_error());
 
         }else {
-        echo "You entered nothing";
+        echo "";
     }
     }
             
-            
-            
+
 
 
             ?>
+
             <p id="demo"></p>
 
-            <form action="sub-dokter.php" method="POST">
-                <input type="text" name="name_first" value="" placeholder="First Name">
-                <input type="text" name="name_last" value="" placeholder="Last Name">
-                <input type="submit" name="submit" value="" placeholder="Submit">
-            </form>
         </article>
     </main>
 </div>
