@@ -26,10 +26,10 @@
                 <a class="nav-link" href="home.php">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Apotheker</a>
+                <a class="nav-link" href="sub-apotheker.php">Apotheker</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Doctor</a>
+                <a class="nav-link" href="sub-dokter.php">Doctor</a>
             </li>
             <li class="nav-item active">
                 <a class="nav-link" href="sub-verzekering.php">Verzekeraar</a>
@@ -57,7 +57,7 @@
         </thead>
         <tbody id="patientTable">
         <tr>
-            <td>1</td>
+            <td>302837783</td>
             <td>Mark</td>
             <td>Otto</td>
             <td>26-04-1999</td>
@@ -89,29 +89,29 @@
         <tr>
             <th>ID</th>
             <th>Medicijn</th>
-            <th>Voorraad</th>
+            <th>Vergoed</th>
         </tr>
         </thead>
         <tbody id="medicijnenTable">
         <tr>
             <td>1</td>
             <td>Hooikoorts tabletten</td>
-            <td><button type="button" class="btn btn-danger">Niet op voorraad</button></td>
+            <td><button type="button" class="btn btn-danger">Niet vergoed</button></td>
         </tr>
         <tr>
             <td>2</td>
             <td>Medicijn Wiet</td>
-            <td><button type="button" class="btn btn-success">op voorraad</button></td>
+            <td><button type="button" class="btn btn-success">Vergoed</button></td>
         </tr>
         <tr>
             <td>3</td>
             <td>Antibiotica</td>
-            <td><button type="button" class="btn btn-danger">Niet op voorraad</button></td>
+            <td><button type="button" class="btn btn-danger">Niet vergoed</button></td>
         </tr>
         <tr>
             <td>4</td>
             <td>Anticonceptiepil</td>
-            <td><button type="button" class="btn btn-danger">Niet op voorraad</button></td>
+            <td><button type="button" class="btn btn-danger">Niet vergoed</button></td>
         </tr>
         </tbody>
     </table>
@@ -132,7 +132,7 @@
         <tr>
             <td>Jan</td>
             <td>Schouten</td>
-            <td><a href="henk-schouten.php">Meer informatie</a></td>
+            <td><a href="Persoon.php">Meer informatie</a></td>
         </tr>
         <tr>
             <td></td>
