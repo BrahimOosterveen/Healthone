@@ -85,8 +85,7 @@
                         echo "<td>" . $row['Beschrijving'] . "</td>";
                         echo "<td>" . $row['Bijwerkingen'] . "</td>";
                         echo "<td>" . "<!--Add functionality to Succes & Danger buttons with PHP/JS-->
-                        <button class=\"btn btn-success\" id=\"succesbtn-3\" onclick=\"\">✔</button>
-                        <button class=\"btn btn-danger\" id=\"removebtn-3\">✖</button>" . "</td>";
+                        <button class=\"btn btn-warning\" id=\"succesbtn-3\" onclick=\"\">Niet opgehaald</button>" . "</td>";
                         echo "</tr>";
                     }
                     echo "</table>";
