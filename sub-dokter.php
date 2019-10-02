@@ -62,7 +62,6 @@
             <?php
             session_start();
             include 'databaseconnectie.php';
-            include_once("db.php");
             $sql = "SELECT Patientnummer, Naam, Achternaam, Geboortedatum, telefoonnummer, medicijnen, medicijnenvullen FROM dokter";
             $result = mysqli_query($conn, $sql);
 
