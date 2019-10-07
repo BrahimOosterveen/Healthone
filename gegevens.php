@@ -6,9 +6,8 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="CSS/sub-dokter.css">
+    <link rel="stylesheet" type="text/css" href="CSS/sub-apotheker.css">
     <link rel="stylesheet" type="text/css" href="CSS/main.css">
-<!--    <script src="JS/Dokter.js"></script>-->
 
     <title>Document</title>
 </head>
@@ -20,6 +19,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <h1 class="text">Zilverenkruis</h1>
+                    <h3 class="text" style="color: grey;">Apotheker</h3>
                 </div>
             </div>
         </div>
@@ -27,7 +27,7 @@
             <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand" href="index.php">
+            <a class="navbar-brand" href="home.php">
                 <img class="navbrand" src="foto/Zilveren-Kruis-logo.png" alt="Logo" >
             </a>
             <div class="collapse navbar-collapse" id="collapse_target">
@@ -35,16 +35,11 @@
                     <li class="nav-item">
                         <a class="nav-link" href="home.php">Home</a>
                     </li>
-                    <li class="nav-item ">
+                    <li class="nav-item active">
                         <a class="nav-link" href="sub-apotheker.php">Apotheker</a>
                     </li>
-                    <li class="nav-item dropdown active">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Dokter</a>
-                        <div class="dropdown-menu">
-                            <a href="sub-dokter.php" class="dropdown-item">Dokter</a>
-                            <a href="medicijnen.php" class="dropdown-item">Medicijnen</a>
-
-                        </div>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sub-dokter.php">Doctor</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="sub-verzekering.php">Verzekeraar</a>
@@ -60,35 +55,36 @@
     <main>
         <article>
             <?php
-            session_start();
             include 'databaseconnectie.php';
-            $sql = "SELECT patientnummer, naam, achternaam, geboortedatum, telefoonnummer, recept FROM patient";
+            $sql = "SELECT patientnummer, naam, achternaam, geboortedatum, telefoonnummer, medicijnen, recept FROM patient WHERE id=" . $_GET['id'];
             $result = mysqli_query($conn, $sql);
 
             if($result = mysqli_query($conn, $sql)){
                 if(mysqli_num_rows($result) > 0){
                     echo "<input type=\"text\" id=\"myInput\" onkeyup=\"myFunction()\" placeholder=\"Search for ID..\">";
-                    echo "<table class=\"table table-striped\">";
+                    echo "<table id=\"table-1\" class=\"table table-striped\">";
                     echo "<thead>";
                     echo "<tr>";
-                    echo "<th scope=\"col\">Patiënt nummer</th>";
+                    echo "<th scope=\"col\">id</th>";
                     echo "<th scope=\"col\">Voornaam</th>";
                     echo "<th scope=\"col\">Achternaam</th>";
-                    echo "<th scope=\"col\">Meer info</th>";
+                    echo "<th scope=\"col\">Geboortedatum</th>";
+                    echo "<th scope=\"col\">telefoonnummer</th>";
+                    echo "<th scope=\"col\">medicijnen</th>";
+                    echo "<th scope=\"col\">recept</th>";
                     echo "</tr>";
                     echo "</thead>";
-                    echo "<tbody id=\"myTable\">";
                     while($row = mysqli_fetch_array($result)){
                         echo "<tr>";
                         echo "<td>" . $row['patientnummer'] . "</td>";
                         echo "<td>" . $row['naam'] . "</td>";
                         echo "<td>" . $row['achternaam'] . "</td>";
-                        echo "<td>
-                        <a href=gegevens.php?id=" . $row['patientnummer']. "><button class=\"btn btn-info\" id=\"succesbtn-3\">Info</button></a>" . "</td>";
-                        echo "</form>";
+                        echo "<td>" . $row['geboortedatum'] . "</td>";
+                        echo "<td>" . $row['telefoonnummer'] . "</td>";
+                        echo "<td> <input type=\"text\" name=\"naam\"> </td>";
+                        echo "<td>" . $row['recept'] . "</td>";
                         echo "</tr>";
                     }
-                    echo "</tbody>";
                     echo "</table>";
                     // Free result set
                     mysqli_free_result($result);
@@ -96,27 +92,11 @@
                     echo "No records matching your query were found.";
                 }
             } else{
-                echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+                echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
             }
-
-            if (isset($_POST['medicijn_naam'])){
-                if ($_POST['medicijn_naam'] != ""){
-                    $first = $_POST['medicijn_naam'];
-                    $sql_store = "INSERT into names (id, first) VALUES (NULL, '$first')";
-                    $sql = mysqli_query($db, $sql_store) or die(mysqli_error());
-
-                }else {
-                    echo "";
-                }
-            }
-            
-
-
-
             ?>
-
+            <a href="sub-dokter.php"><button class="btn btn-primary" id="succesbtn-3" onclick="">Vorige pagina</button></a>
             <p id="demo"></p>
-
         </article>
     </main>
 </div>
@@ -127,23 +107,9 @@
         <small>Copyright &copy; Zilverenkruis</small>
     </div>
 </footer>
-
-
-
-
+<script src="JS/filteredSearch.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<script>
-    $(document).ready(function(){
-        $("#myInput").on("keyup", function() {
-            var value = $(this).val().toLowerCase();
-            $("#myTable tr").filter(function() {
-                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-            });
-        });
-    });
-</script>
 </body>
 </html>
-

@@ -9,9 +9,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="CSS/main.css">
     <link rel="stylesheet" type="text/css" href="CSS/overb.css">
-
     <title>Document</title>
 </head>
 <body>
@@ -37,13 +35,13 @@
                 <a class="nav-link" href="home.php">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Apotheker</a>
+                <a class="nav-link" href="sub-apotheker.php">Apotheker</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Doctor</a>
+                <a class="nav-link" href="sub-dokter.php">Doctor</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Verzekeraar</a>
+                <a class="nav-link" href="sub-verzekering.php">Verzekeraar</a>
             </li>
             <li class="nav-item active">
                 <a class="nav-link" href="over.php">Contact</a>

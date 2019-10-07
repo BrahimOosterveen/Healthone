@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 02 okt 2019 om 12:52
+-- Gegenereerd op: 07 okt 2019 om 09:34
 -- Serverversie: 10.4.6-MariaDB
 -- PHP-versie: 7.3.9
 
@@ -27,12 +27,11 @@ USE `healthone`;
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `dokter`
+-- Tabelstructuur voor tabel `apotheker`
 --
 
-CREATE TABLE `dokter` (
+CREATE TABLE `apotheker` (
   `id` int(11) NOT NULL,
-  `patientnummer` varchar(255) NOT NULL,
   `Naam` varchar(255) NOT NULL,
   `Achternaam` varchar(255) NOT NULL,
   `Geboortedatum` date NOT NULL,
@@ -42,7 +41,7 @@ CREATE TABLE `dokter` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Gegevens worden geëxporteerd voor tabel `dokter`
+-- Gegevens worden geëxporteerd voor tabel `apotheker`
 --
 
 INSERT INTO `apotheker` (`id`, `Naam`, `Achternaam`, `Geboortedatum`, `Medicijnen`, `Beschrijving`, `Bijwerkingen`) VALUES
@@ -77,14 +76,80 @@ INSERT INTO `apotheker` (`id`, `Naam`, `Achternaam`, `Geboortedatum`, `Medicijne
 (99442, 'Anthony', 'Hemstro', '1979-08-12', 'Omecat ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer et enim vel lacus cursus luctus sed eget odio. Donec sed. ', ''),
 (99999, 'Benjamin', 'De Licht', '1986-06-18', 'Uptravi', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer et enim vel lacus cursus luctus sed eget odio. Donec sed. ', '');
 
+-- --------------------------------------------------------
+
+--
+-- Tabelstructuur voor tabel `medicijn`
+--
+
+CREATE TABLE `medicijn` (
+  `id` int(255) NOT NULL,
+  `mid` varchar(255) NOT NULL,
+  `naam` varchar(255) NOT NULL,
+  `Fabrikant` varchar(255) NOT NULL,
+  `HoeToedienen` varchar(255) NOT NULL,
+  `NietMedicijn` varchar(255) NOT NULL,
+  `Bijwerkingen` varchar(255) NOT NULL,
+  `reccept` varchar(255) NOT NULL,
+  `Vergoed` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `medicijn`
+--
+
+INSERT INTO `medicijn` (`id`, `mid`, `naam`, `Fabrikant`, `HoeToedienen`, `NietMedicijn`, `Bijwerkingen`, `reccept`, `Vergoed`) VALUES
+(1, '1000', 'antibiotica', 'Teva', 'Door injectie', 'antistollingsmiddelen', 'botpijn, hoofdpijn, pijn in gewrichten en spieren, maagdarmklachten, vermoeidheid, zwakte, hoest en haaruitval.', 'Ja', 'Ja'),
+(2, '1001', 'Diclofenac', 'Teva', 'Door injectie', 'antistollingsmiddelen', 'botpijn, hoofdpijn, pijn in gewrichten en spieren, maagdarmklachten, vermoeidheid, zwakte, hoest en haaruitval.', 'Ja', 'Ja'),
+(3, '1002', 'Amoxicilline', 'Teva', 'Door injectie', 'antistollingsmiddelen', 'botpijn, hoofdpijn, pijn in gewrichten en spieren, maagdarmklachten, vermoeidheid, zwakte, hoest en haaruitval.', 'Ja', 'Ja'),
+(4, '1003', 'Omeprazol', 'Teva', 'Door injectie', 'antistollingsmiddelen', 'botpijn, hoofdpijn, pijn in gewrichten en spieren, maagdarmklachten, vermoeidheid, zwakte, hoest en haaruitval.', 'Ja', 'Ja'),
+(5, '1004', 'Hydrocortison', 'Teva', 'Door injectie', 'antistollingsmiddelen', 'botpijn, hoofdpijn, pijn in gewrichten en spieren, maagdarmklachten, vermoeidheid, zwakte, hoest en haaruitval.', 'Ja', 'Ja');
+
+-- --------------------------------------------------------
+
+--
+-- Tabelstructuur voor tabel `patient`
+--
+
+CREATE TABLE `patient` (
+  `id` int(11) NOT NULL,
+  `patientnummer` varchar(255) NOT NULL,
+  `naam` varchar(255) NOT NULL,
+  `achternaam` varchar(255) NOT NULL,
+  `geboortedatum` date NOT NULL,
+  `telefoonnummer` varchar(255) NOT NULL,
+  `medicijnen` varchar(255) NOT NULL,
+  `recept` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `patient`
+--
+
+INSERT INTO `patient` (`id`, `patientnummer`, `naam`, `achternaam`, `geboortedatum`, `telefoonnummer`, `medicijnen`, `recept`) VALUES
+(1, '0001', 'Brahim', 'Oosterveen', '2001-12-22', '06-49700573', '', ''),
+(2, '0002', 'Carlos', 'Miguel', '2002-01-10', '06-23600583', '', '');
+
 --
 -- Indexen voor geëxporteerde tabellen
 --
 
 --
--- Indexen voor tabel `dokter`
+-- Indexen voor tabel `apotheker`
 --
-ALTER TABLE `dokter`
+ALTER TABLE `apotheker`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexen voor tabel `medicijn`
+--
+ALTER TABLE `medicijn`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexen voor tabel `patient`
+--
+ALTER TABLE `patient`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -92,10 +157,22 @@ ALTER TABLE `dokter`
 --
 
 --
--- AUTO_INCREMENT voor een tabel `dokter`
+-- AUTO_INCREMENT voor een tabel `apotheker`
 --
 ALTER TABLE `apotheker`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100001;
+
+--
+-- AUTO_INCREMENT voor een tabel `medicijn`
+--
+ALTER TABLE `medicijn`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT voor een tabel `patient`
+--
+ALTER TABLE `patient`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -40,7 +40,7 @@
                 <a class="nav-link" href="sub-dokter.php">Dokter</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Verzekeraar</a>
+                <a class="nav-link" href="sub-verzekering.php">Verzekeraar</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="over.php">Contact</a>

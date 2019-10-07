@@ -28,16 +28,16 @@ $result = $query->fetchAll(PDO::FETCH_ASSOC);
     </a>
     <div class="collapse navbar-collapse" id="collapse_target">
         <ul class="navbar-nav">
-            <li class="nav-item ">
+            <li class="nav-item active">
                 <a class="nav-link" href="home.php">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Apotheker</a>
+                <a class="nav-link" href="sub-apotheker.php">Apotheker</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Doctor</a>
+                <a class="nav-link" href="sub-dokter.php">Dokter</a>
             </li>
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" href="sub-verzekering.php">Verzekeraar</a>
             </li>
             <li class="nav-item">
@@ -47,6 +47,7 @@ $result = $query->fetchAll(PDO::FETCH_ASSOC);
         </ul>
     </div>
 </nav>
+
 <div class="container">
     <h2>Patienten</h2>
     <input class="form-control" id="patientInput" type="text" placeholder="Search..">
@@ -63,7 +64,7 @@ $result = $query->fetchAll(PDO::FETCH_ASSOC);
         </thead>
         <tbody id="patientTable">
         <tr>
-            <td>1</td>
+            <td>302837783</td>
             <td>Mark</td>
             <td>Otto</td>
             <td>26-04-1999</td>
@@ -93,20 +94,22 @@ $result = $query->fetchAll(PDO::FETCH_ASSOC);
     <table class="table table-bordered table-striped">
         <thead>
         <tr>
-            <th>ID</th>
+            <th>Medicijn-ID</th>
             <th>Medicijn</th>
-            <th>vergoed</th>
+            <th>Vergoed</th>
+            <th>Informatie</th>
         </tr>
         </thead>
         <tbody id="medicijnenTable">
         <?php
-            foreach ($result as &$data) {
-                echo "<tr>";
-                echo "<td>" . $data['medicijn_id'] . "</td>";
-                echo "<td>" . $data['naam'] . "</td>";
-                echo "<td>" . $data['vergoed'] . "</td>";
-                echo "</tr>";
-            }
+        foreach ($result as &$data) {
+            echo "<tr>";
+            echo "<td>" . $data['medicijn_id'] . "</td>";
+            echo "<td>" . $data['naam'] . "</td>";
+            echo "<td>" . $data['vergoed'] . "</td>";
+            echo "<td>"  . "<a href='aan_ver_gegevens.php?id=" . $data['id'] . "'>" . $data["informatie"]  . "</td>";//aan = aanpassen en ver = verzekering
+            echo "</tr>";
+        }
         ?>
         </tbody>
     </table>
@@ -127,7 +130,7 @@ $result = $query->fetchAll(PDO::FETCH_ASSOC);
         <tr>
             <td>Jan</td>
             <td>Schouten</td>
-            <td><a href="henk-schouten.php">Meer informatie</a></td>
+            <td><a href="Persoon.php">Meer informatie</a></td>
         </tr>
         <tr>
             <td></td>
@@ -179,5 +182,8 @@ $result = $query->fetchAll(PDO::FETCH_ASSOC);
         });
     });
 </script>
+<?php
+
+?>
 </body>
 </html>
