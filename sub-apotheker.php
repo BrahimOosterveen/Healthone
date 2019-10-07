@@ -27,7 +27,7 @@
         <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="index.php">
+        <a class="navbar-brand" href="home.php">
             <img class="navbrand" src="foto/Zilveren-Kruis-logo.png" alt="Logo" >
         </a>
         <div class="collapse navbar-collapse" id="collapse_target">
@@ -36,13 +36,13 @@
                     <a class="nav-link" href="home.php">Home</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Apotheker</a>
+                    <a class="nav-link" href="sub-apotheker.php">Apotheker</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Doctor</a>
+                    <a class="nav-link" href="sub-dokter.php">Doctor</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Verzekeraar</a>
+                    <a class="nav-link" href=sub-verzekering.php">Verzekeraar</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="over.php">Contact</a>
@@ -56,7 +56,11 @@
         <article>
             <?php
             include 'databaseconnectie.php';
+<<<<<<< HEAD
+            $sql = "SELECT id, Naam, Achternaam, Geboortedatum FROM Apotheker";
+=======
             $sql = "SELECT id, Naam, Achternaam, Geboortedatum, Medicijnen, Beschrijving, Bijwerkingen FROM Apotheker";
+>>>>>>> 517f993fc8d2fe39ed065385f24eb98e4d68ce4a
             $result = mysqli_query($conn, $sql);
 
             if($result = mysqli_query($conn, $sql)){
@@ -68,10 +72,15 @@
                     echo "<th scope=\"col\">id</th>";
                     echo "<th scope=\"col\">Voornaam</th>";
                     echo "<th scope=\"col\">Achternaam</th>";
+<<<<<<< HEAD
+                    echo "<th scope=\"col\">Geboortedatum</th>";
+                    echo "<th scope=\"col\">Meer info</th>";
+=======
                     echo "<th scope=\"col\">Medicijnen</th>";
                     echo "<th scope=\"col\">Beschrijving</th>";
                     echo "<th scope=\"col\">Bijwerkingen</th>";
                     echo "<th scope=\"col\">Status</th>";
+>>>>>>> 517f993fc8d2fe39ed065385f24eb98e4d68ce4a
                     echo "</tr>";
                     echo "</thead>";
                     while($row = mysqli_fetch_array($result)){
@@ -79,12 +88,9 @@
                         echo "<td>" . $row['id'] . "</td>";
                         echo "<td>" . $row['Naam'] . "</td>";
                         echo "<td>" . $row['Achternaam'] . "</td>";
-                        echo "<td>" . $row['Medicijnen'] . "</td>";
-                        echo "<td>" . $row['Beschrijving'] . "</td>";
-                        echo "<td>" . $row['Bijwerkingen'] . "</td>";
-                        echo "<td>" . "<!--Add functionality to Succes & Danger buttons with PHP/JS-->
-                        <button class=\"btn btn-success\" id=\"succesbtn-3\" onclick=\"\">✔</button>
-                        <button class=\"btn btn-danger\" id=\"removebtn-3\">✖</button>" . "</td>";
+                        echo "<td>" . $row['Geboortedatum'] . "</td>";
+                        echo "<td>
+                        <a href=detail.php?id=" . $row['id']. "><button class=\"btn btn-primary\" id=\"succesbtn-3\">Info</button></a>" . "</td>";
                         echo "</tr>";
                     }
                     echo "</table>";

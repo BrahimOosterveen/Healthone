@@ -28,7 +28,7 @@
             <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand" href="index.php">
+            <a class="navbar-brand" href="home.php">
                 <img class="navbrand" src="foto/Zilveren-Kruis-logo.png" alt="Logo" >
             </a>
             <div class="collapse navbar-collapse" id="collapse_target">
@@ -62,7 +62,7 @@
         <article>
             <?php
             include 'databaseconnectie.php';
-            $sql = "SELECT id, Naam, Fabrikant, HoeToedienen, NietMedicijn, Bijwerkingen, reccept, Vergoed FROM medicijn";
+            $sql = "SELECT id, mid, naam, Fabrikant, HoeToedienen, NietMedicijn, Bijwerkingen, reccept, Vergoed FROM medicijn";
             $result = mysqli_query($conn, $sql);
 
             if($result = mysqli_query($conn, $sql)){
@@ -84,8 +84,8 @@
                     echo "<tbody id=\"myTable\">";
                     while($row = mysqli_fetch_array($result)){
                         echo "<tr>";
-                        echo "<td>" . $row['id'] . "</td>";
-                        echo "<td>" . $row['Naam'] . "</td>";
+                        echo "<td>" . $row['mid'] . "</td>";
+                        echo "<td>" . $row['naam'] . "</td>";
                         echo "<td>" . $row['Fabrikant'] . "</td>";
                         echo "<td>" . $row['HoeToedienen'] . "</td>";
                         echo "<td>" . $row['NietMedicijn'] . "</td>";
