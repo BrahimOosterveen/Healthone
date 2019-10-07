@@ -56,7 +56,7 @@
         <article>
             <?php
             include 'databaseconnectie.php';
-            $sql = "SELECT id, Naam, Achternaam, Geboortedatum, Medicijnen, Beschrijving, Bijwerkingen FROM Apotheker WHERE id=" . $_GET['id'];
+            $sql = "SELECT id, Naam, Achternaam, Geboortedatum, Medicijnen, Beschrijving, Bijwerkingen, status FROM Apotheker WHERE id=" . $_GET['id'];
             $result = mysqli_query($conn, $sql);
 
             if($result = mysqli_query($conn, $sql)){
@@ -84,8 +84,15 @@
                         echo "<td>" . $row['Medicijnen'] . "</td>";
                         echo "<td>" . $row['Beschrijving'] . "</td>";
                         echo "<td>" . $row['Bijwerkingen'] . "</td>";
-                        echo "<td>" . "<!--Add functionality to Succes & Danger buttons with PHP/JS-->
+                        if($row['status'] == 0)
+                        {
+                            echo "<td>" . "
                         <button class=\"btn btn-warning\" id=\"succesbtn-3\" onclick=\"\">Niet opgehaald</button>" . "</td>";
+                        } else {
+                            echo "<td>" . "
+                        <button class=\"btn btn-success\" id=\"succesbtn-3\" onclick=\"\">Opgehaald</button>" . "</td>";
+
+                        }
                         echo "</tr>";
                     }
                     echo "</table>";
@@ -98,6 +105,11 @@
                 echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
             }
             ?>
+           <a href='./afhandelen.php?id=<?php echo $_GET['id'] ?>'><button class="btn btn-success" id="succesbtn-3" onclick="">Recept uitgeven</button></a>
+            <a href='./ongedaanAfhandelen.php?id=<?php echo $_GET['id'] ?>'><button class="btn btn-danger" id="succesbtn-3" onclick="">Ongedaan maken</button></a>
+
+            <br>
+            <br>
             <a href="sub-apotheker.php"><button class="btn btn-primary" id="succesbtn-3" onclick="">Vorige pagina</button></a>
             <p id="demo"></p>
         </article>
