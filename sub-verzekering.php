@@ -43,43 +43,46 @@
 </nav>
 <div class="container">
     <h2>Patienten</h2>
-    <input class="form-control" id="patientInput" type="text" placeholder="Search..">
-    <br>
-    <table class="table table-bordered table-striped">
-        <thead>
-        <tr>
-            <th>ID</th>
-            <th>Voornaam</th>
-            <th>Achternaam</th>
-            <th>Geboorte datum</th>
-            <th>E-mail</th>
-        </tr>
-        </thead>
-        <tbody id="patientTable">
-        <tr>
-            <td>302837783</td>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>26-04-1999</td>
-            <td>**</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>Jacob</td>
-            <td>Thorton</td>
-            <td>29-01-2001</td>
-            <td>**</td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>Larry</td>
-            <td>Brid</td>
-            <td>11-06-1973</td>
-            <td>**</td>
-        </tr>
-        </tbody>
-    </table>
-</div>
+    <?php
+            session_start();
+            include 'databaseconnectie.php';
+            $sql = "SELECT patientnummer, naam, achternaam, geboortedatum, telefoonnummer, recept FROM patient";
+            $result = mysqli_query($conn, $sql);
+
+            if($result = mysqli_query($conn, $sql)){
+                if(mysqli_num_rows($result) > 0){
+                    echo "<input type=\"text\" id=\"myInput\" onkeyup=\"myFunction()\" placeholder=\"Search for ID..\">";
+                    echo "<table class=\"table table-striped\">";
+                    echo "<thead>";
+                    echo "<tr>";
+                    echo "<th scope=\"col\">Patiënt nummer</th>";
+                    echo "<th scope=\"col\">Voornaam</th>";
+                    echo "<th scope=\"col\">Achternaam</th>";
+                    echo "<th scope=\"col\">Meer info</th>";
+                    echo "</tr>";
+                    echo "</thead>";
+                    echo "<tbody id=\"myTable\">";
+                    while($row = mysqli_fetch_array($result)){
+                        echo "<tr>";
+                        echo "<td>" . $row['patientnummer'] . "</td>";
+                        echo "<td>" . $row['naam'] . "</td>";
+                        echo "<td>" . $row['achternaam'] . "</td>";
+                        echo "<td>
+                        <a href=verzeker-gegevens.php?id=" . $row['patientnummer']. "><button class=\"btn btn-info\" id=\"succesbtn-3\">Info</button></a>" . "</td>";
+                        echo "</form>";
+                        echo "</tr>";
+                    }
+                    echo "</tbody>";
+                    echo "</table>";
+                    // Free result set
+                    mysqli_free_result($result);
+                } else{
+                    echo "No records matching your query were found.";
+                }
+            } else{
+                echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+            }
+            ?>
 <div class="container">
     <h2>Medicijnen</h2>
     <input class="form-control" id="medicijnenInput" type="text" placeholder="Search..">
