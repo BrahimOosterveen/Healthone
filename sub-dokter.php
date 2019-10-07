@@ -27,7 +27,7 @@
             <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand" href="home.php">
+            <a class="navbar-brand" href="index.php">
                 <img class="navbrand" src="foto/Zilveren-Kruis-logo.png" alt="Logo" >
             </a>
             <div class="collapse navbar-collapse" id="collapse_target">
@@ -62,7 +62,7 @@
             <?php
             session_start();
             include 'databaseconnectie.php';
-            $sql = "SELECT patientnummer, naam, achternaam, geboortedatum, telefoonnummer, recept FROM patient";
+            $sql = "SELECT Patientnummer, Naam, Achternaam, Geboortedatum, telefoonnummer, medicijnen, medicijnenvullen FROM dokter";
             $result = mysqli_query($conn, $sql);
 
             if($result = mysqli_query($conn, $sql)){
@@ -74,17 +74,25 @@
                     echo "<th scope=\"col\">Patiënt nummer</th>";
                     echo "<th scope=\"col\">Voornaam</th>";
                     echo "<th scope=\"col\">Achternaam</th>";
-                    echo "<th scope=\"col\"></th>";
+                    echo "<th scope=\"col\">Geboortedatum</th>";
+                    echo "<th scope=\"col\">telefoon nummer</th>";
+                    echo "<th scope=\"col\">medicijnen</th>";
+                    echo "<th scope=\"col\">medicijnen invullen</th>";
+                    echo "<th scope=\"col\">Status</th>";
                     echo "</tr>";
                     echo "</thead>";
                     echo "<tbody id=\"myTable\">";
                     while($row = mysqli_fetch_array($result)){
                         echo "<tr>";
-                        echo "<td>" . $row['patientnummer'] . "</td>";
-                        echo "<td>" . $row['naam'] . "</td>";
-                        echo "<td>" . $row['achternaam'] . "</td>";
-                        echo "<td>
-                        <a href=gegevens.php?id=" . $row['patientnummer']. "><button class=\"btn btn-info\" id=\"succesbtn-3\">Info</button></a>" . "</td>";
+                        echo "<td>" . $row['Patientnummer'] . "</td>";
+                        echo "<td>" . $row['Naam'] . "</td>";
+                        echo "<td>" . $row['Achternaam'] . "</td>";
+                        echo "<td>" . $row['Geboortedatum'] . "</td>";
+                        echo "<td>" . $row['telefoonnummer'] . "</td>";
+                        echo "<td>" . $row['medicijnenvullen'] . "</td>";
+                        echo "<form action=\"sub-dokter.php\" method=\"POST\">";
+                        echo "<td>" . " <input type=\"text\" name=\"medicijn_naam\" value=\"\" placeholder=\"medicijn\">
+                        <td><input class=\"btn btn-success\" type=\"submit\" name=\"Verzenden\" value=\"verzenden\" placeholder=\"verzenden\">" . "</td>";
                         echo "</form>";
                         echo "</tr>";
                     }

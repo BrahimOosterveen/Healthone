@@ -18,11 +18,7 @@
     <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
         <span class="navbar-toggler-icon"></span>
     </button>
-<<<<<<< HEAD
-    <a class="navbar-brand" href="home.php">
-=======
     <a class="navbar-brand" href="index.php">
->>>>>>> 517f993fc8d2fe39ed065385f24eb98e4d68ce4a
         <img class="navbrand" src="foto/Zilveren-Kruis-logo.png" alt="Logo" >
     </a>
     <div class="collapse navbar-collapse" id="collapse_target">
