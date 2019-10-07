@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="04973541-9fbd-4e8d-8acc-6651e97df950" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSS/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSS/overb.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/overb.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSS/sub-apotheker.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/sub-apotheker.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSS/sub-dokter.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/sub-dokter.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/home.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medicijnen.php" beforeDir="false" afterPath="$PROJECT_DIR$/medicijnen.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/over.php" beforeDir="false" afterPath="$PROJECT_DIR$/over.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gegevens.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sql/healthone.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sql/healthone.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sub-apotheker.php" beforeDir="false" afterPath="$PROJECT_DIR$/sub-apotheker.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sub-dokter.php" beforeDir="false" afterPath="$PROJECT_DIR$/sub-dokter.php" afterDir="false" />
     </list>
