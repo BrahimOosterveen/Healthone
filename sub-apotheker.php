@@ -36,13 +36,13 @@
                     <a class="nav-link" href="home.php">Home</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Apotheker</a>
+                    <a class="nav-link" href="sub-apotheker.php">Apotheker</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Doctor</a>
+                    <a class="nav-link" href="sub-dokter.php">Doctor</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Verzekeraar</a>
+                    <a class="nav-link" href="sub-verzekering.php">Verzekeraar</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="over.php">Contact</a>

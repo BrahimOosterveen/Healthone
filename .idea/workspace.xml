@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="04973541-9fbd-4e8d-8acc-6651e97df950" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/verzeker-gegevens.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gegevens.php" beforeDir="false" afterPath="$PROJECT_DIR$/gegevens.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sub-verzekering.php" beforeDir="false" afterPath="$PROJECT_DIR$/sub-verzekering.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sub-apotheker.php" beforeDir="false" afterPath="$PROJECT_DIR$/sub-apotheker.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
