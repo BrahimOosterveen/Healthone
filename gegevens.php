@@ -81,7 +81,7 @@
                         echo "<td>" . $row['achternaam'] . "</td>";
                         echo "<td>" . $row['geboortedatum'] . "</td>";
                         echo "<td>" . $row['telefoonnummer'] . "</td>";
-                        echo "<td>" . $row['medicijnen'] . "</td>";
+                        echo "<td> <input type=\"text\" name=\"naam\"> </td>";
                         echo "<td>" . $row['recept'] . "</td>";
                         echo "</tr>";
                     }
