@@ -13,6 +13,12 @@
     <title>Verzekering</title>
 </head>
 <body>
+<?php
+$db = new PDO("mysql:host=localhost;dbname=healthone", "root", "");
+$query = $db->prepare("SELECT * FROM medicijnen");
+$query->execute();
+$result = $query->fetchAll(PDO::FETCH_ASSOC);
+?>
 <nav class="navbar navbar-expand-sm bg-light navbar-light sticky-top">
     <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
         <span class="navbar-toggler-icon"></span>
@@ -89,30 +95,19 @@
         <tr>
             <th>ID</th>
             <th>Medicijn</th>
-            <th>Voorraad</th>
+            <th>vergoed</th>
         </tr>
         </thead>
         <tbody id="medicijnenTable">
-        <tr>
-            <td>1</td>
-            <td>Hooikoorts tabletten</td>
-            <td><button type="button" class="btn btn-danger">Niet op voorraad</button></td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>Medicijn Wiet</td>
-            <td><button type="button" class="btn btn-success">op voorraad</button></td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>Antibiotica</td>
-            <td><button type="button" class="btn btn-danger">Niet op voorraad</button></td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td>Anticonceptiepil</td>
-            <td><button type="button" class="btn btn-danger">Niet op voorraad</button></td>
-        </tr>
+        <?php
+            foreach ($result as &$data) {
+                echo "<tr>";
+                echo "<td>" . $data['medicijn_id'] . "</td>";
+                echo "<td>" . $data['naam'] . "</td>";
+                echo "<td>" . $data['vergoed'] . "</td>";
+                echo "</tr>";
+            }
+        ?>
         </tbody>
     </table>
 </div>
@@ -184,8 +179,5 @@
         });
     });
 </script>
-<?php
-
-?>
 </body>
 </html>

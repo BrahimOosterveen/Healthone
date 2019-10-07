@@ -2,11 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="04973541-9fbd-4e8d-8acc-6651e97df950" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/CSS/henk-schouten.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foto/Henk_Schouten.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/henk-schouten.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSS/homeb.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/homeb.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CSS/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CSS/overb.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/overb.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CSS/sub-apotheker.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/sub-apotheker.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS/filteredSearch.js" beforeDir="false" afterPath="$PROJECT_DIR$/JS/filteredSearch.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/home.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/over.php" beforeDir="false" afterPath="$PROJECT_DIR$/over.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sub-apotheker.php" beforeDir="false" afterPath="$PROJECT_DIR$/sub-apotheker.php" afterDir="false" />
     </list>
@@ -92,6 +96,7 @@
       <workItem from="1569492170458" duration="1816000" />
       <workItem from="1569829745741" duration="4891000" />
       <workItem from="1570007116620" duration="655000" />
+      <workItem from="1570431616874" duration="3335000" />
     </task>
     <servers />
   </component>
