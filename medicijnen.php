@@ -39,16 +39,16 @@
                     <li class="nav-item ">
                         <a class="nav-link" href="sub-apotheker.php">Apotheker</a>
                     </li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown active">
                         <a href="sub-dokter.php" class="nav-link dropdown-toggle" data-toggle="dropdown">Dokter</a>
                         <div class="dropdown-menu">
                             <a href="sub-dokter.php" class="dropdown-item">Dokter</a>
-                            <a href="medicijnen.php" class="dropdown-item">Medicijnen</a>
+                            <a href="medicijnen.php" class="dropdown-item active">Medicijnen</a>
 
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Verzekeraar</a>
+                        <a class="nav-link" href="sub-verzekering.php">Verzekeraar</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="over.php">Contact</a>

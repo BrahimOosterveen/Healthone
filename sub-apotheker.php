@@ -61,6 +61,7 @@
 
             if($result = mysqli_query($conn, $sql)){
                 if(mysqli_num_rows($result) > 0){
+                    echo "<input type=\"text\" id=\"myInput\" onkeyup=\"myFunction()\" placeholder=\"Search for ID..\">";
                     echo "<table id=\"table-1\" class=\"table table-striped\">";
                     echo "<thead>";
                     echo "<tr>";
@@ -93,7 +94,7 @@
                     echo "No records matching your query were found.";
                 }
             } else{
-                echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+                echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
             }
             ?>
             <p id="demo"></p>
@@ -107,6 +108,7 @@
         <small>Copyright &copy; Zilverenkruis</small>
     </div>
 </footer>
+<script src="JS/filteredSearch.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
