@@ -31,7 +31,7 @@
     <div class="collapse navbar-collapse" id="collapse_target">
         <ul class="navbar-nav">
             <li class="nav-item active">
-                <a class="nav-link" href="index.php">Home</a>
+                <a class="nav-link" href="home.php">Home</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="sub-apotheker.php">Apotheker</a>
@@ -40,7 +40,7 @@
                 <a class="nav-link" href="sub-dokter.php">Dokter</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Verzekeraar</a>
+                <a class="nav-link" href="sub-verzekering.php">Verzekeraar</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="over.php">Contact</a>

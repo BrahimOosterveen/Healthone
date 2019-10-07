@@ -19,6 +19,7 @@
         <div class="row">
             <div class="col-sm-12">
                 <h1 class="text">Zilverenkruis</h1>
+                <h3 class="text" style="color: grey;">Apotheker</h3>
             </div>
         </div>
     </div>
@@ -26,7 +27,7 @@
         <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="index.php">
+        <a class="navbar-brand" href="home.php">
             <img class="navbrand" src="foto/Zilveren-Kruis-logo.png" alt="Logo" >
         </a>
         <div class="collapse navbar-collapse" id="collapse_target">
@@ -35,13 +36,13 @@
                     <a class="nav-link" href="home.php">Home</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Apotheker</a>
+                    <a class="nav-link" href="sub-apotheker.php">Apotheker</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Doctor</a>
+                    <a class="nav-link" href="sub-dokter.php">Doctor</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Verzekeraar</a>
+                    <a class="nav-link" href=sub-verzekering.php">Verzekeraar</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="over.php">Contact</a>
@@ -55,21 +56,20 @@
         <article>
             <?php
             include 'databaseconnectie.php';
-            $sql = "SELECT id, Naam, Achternaam, Medicijnen, Beschrijving, Bijwerkingen FROM Apotheker";
+            $sql = "SELECT id, Naam, Achternaam, Geboortedatum FROM Apotheker";
             $result = mysqli_query($conn, $sql);
 
             if($result = mysqli_query($conn, $sql)){
                 if(mysqli_num_rows($result) > 0){
+                    echo "<input type=\"text\" id=\"myInput\" onkeyup=\"myFunction()\" placeholder=\"Search for ID..\">";
                     echo "<table id=\"table-1\" class=\"table table-striped\">";
                     echo "<thead>";
                     echo "<tr>";
                     echo "<th scope=\"col\">id</th>";
                     echo "<th scope=\"col\">Voornaam</th>";
                     echo "<th scope=\"col\">Achternaam</th>";
-                    echo "<th scope=\"col\">Medicijnen</th>";
-                    echo "<th scope=\"col\">Beschrijving</th>";
-                    echo "<th scope=\"col\">Bijwerking</th>";
-                    echo "<th scope=\"col\">Status</th>";
+                    echo "<th scope=\"col\">Geboortedatum</th>";
+                    echo "<th scope=\"col\">Meer info</th>";
                     echo "</tr>";
                     echo "</thead>";
                     while($row = mysqli_fetch_array($result)){
@@ -77,12 +77,9 @@
                         echo "<td>" . $row['id'] . "</td>";
                         echo "<td>" . $row['Naam'] . "</td>";
                         echo "<td>" . $row['Achternaam'] . "</td>";
-                        echo "<td>" . $row['Medicijnen'] . "</td>";
-                        echo "<td>" . $row['Beschrijving'] . "</td>";
-                        echo "<td>" . $row['Bijwerkingen'] . "</td>";
-                        echo "<td>" . "<!--Add functionality to Succes & Danger buttons with PHP/JS-->
-                        <button class=\"btn btn-success\" id=\"succesbtn-3\" onclick=\"\">✔</button>
-                        <button class=\"btn btn-danger\" id=\"removebtn-3\">✖</button>" . "</td>";
+                        echo "<td>" . $row['Geboortedatum'] . "</td>";
+                        echo "<td>
+                        <a href=detail.php?id=" . $row['id']. "><button class=\"btn btn-primary\" id=\"succesbtn-3\">Info</button></a>" . "</td>";
                         echo "</tr>";
                     }
                     echo "</table>";
@@ -92,7 +89,7 @@
                     echo "No records matching your query were found.";
                 }
             } else{
-                echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+                echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
             }
             ?>
             <p id="demo"></p>
@@ -106,6 +103,7 @@
         <small>Copyright &copy; Zilverenkruis</small>
     </div>
 </footer>
+<script src="JS/filteredSearch.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
