@@ -56,11 +56,11 @@
         <article>
             <?php
             include 'databaseconnectie.php';
-<<<<<<< HEAD
+
             $sql = "SELECT id, Naam, Achternaam, Geboortedatum FROM Apotheker";
-=======
+
             $sql = "SELECT id, Naam, Achternaam, Geboortedatum, Medicijnen, Beschrijving, Bijwerkingen FROM Apotheker";
->>>>>>> 517f993fc8d2fe39ed065385f24eb98e4d68ce4a
+
             $result = mysqli_query($conn, $sql);
 
             if($result = mysqli_query($conn, $sql)){
@@ -72,15 +72,15 @@
                     echo "<th scope=\"col\">id</th>";
                     echo "<th scope=\"col\">Voornaam</th>";
                     echo "<th scope=\"col\">Achternaam</th>";
-<<<<<<< HEAD
+
                     echo "<th scope=\"col\">Geboortedatum</th>";
                     echo "<th scope=\"col\">Meer info</th>";
-=======
+
                     echo "<th scope=\"col\">Medicijnen</th>";
                     echo "<th scope=\"col\">Beschrijving</th>";
                     echo "<th scope=\"col\">Bijwerkingen</th>";
                     echo "<th scope=\"col\">Status</th>";
->>>>>>> 517f993fc8d2fe39ed065385f24eb98e4d68ce4a
+
                     echo "</tr>";
                     echo "</thead>";
                     while($row = mysqli_fetch_array($result)){

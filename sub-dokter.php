@@ -74,7 +74,7 @@
                     echo "<th scope=\"col\">Patiënt nummer</th>";
                     echo "<th scope=\"col\">Voornaam</th>";
                     echo "<th scope=\"col\">Achternaam</th>";
-                    echo "<th scope=\"col\"></th>";
+                    echo "<th scope=\"col\">Meer info</th>";
                     echo "</tr>";
                     echo "</thead>";
                     echo "<tbody id=\"myTable\">";
