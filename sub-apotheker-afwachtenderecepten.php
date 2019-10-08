@@ -15,48 +15,48 @@
 
 <div class="container">
     <header>
-    <div class="jumbotron text-center">
-        <div class="row">
-            <div class="col-sm-12">
-                <h1 class="text">Zilverenkruis</h1>
-                <h3 class="text" style="color: grey;">Apotheker</h3>
+        <div class="jumbotron text-center">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h1 class="text">Zilverenkruis</h1>
+                    <h3 class="text" style="color: grey;">Apotheker</h3>
+                </div>
             </div>
         </div>
-    </div>
-    <nav class="navbar navbar-expand-sm bg-light navbar-light sticky-top">
-        <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <a class="navbar-brand" href="index.php">
-            <img class="navbrand" src="foto/Zilveren-Kruis-logo.png" alt="Logo" >
-        </a>
-        <div class="collapse navbar-collapse" id="collapse_target">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="home.php">Home</a>
-                </li>
-                <li class="nav-item dropdown active">
-                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Apotheker</a>
-                    <div class="dropdown-menu">
-                        <a href="sub-apotheker.php" class="dropdown-item">Patienten lijst</a>
-                        <a href="sub-apotheker-opgehaaldrecepten.php" class="dropdown-item">Opgehaalde recepten</a>
-                        <a href="sub-apotheker-afwachtenderecepten.php" class="dropdown-item">Afwachtende recepten</a>
+        <nav class="navbar navbar-expand-sm bg-light navbar-light sticky-top">
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="index.php">
+                <img class="navbrand" src="foto/Zilveren-Kruis-logo.png" alt="Logo" >
+            </a>
+            <div class="collapse navbar-collapse" id="collapse_target">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="home.php">Home</a>
+                    </li>
+                    <li class="nav-item dropdown active">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Apotheker</a>
+                        <div class="dropdown-menu">
+                            <a href="sub-apotheker.php" class="dropdown-item">Patienten lijst</a>
+                            <a href="sub-apotheker-opgehaaldrecepten.php" class="dropdown-item">Opgehaalde recepten</a>
+                            <a href="sub-apotheker-afwachtenderecepten.php" class="dropdown-item">Afwachtende recepten</a>
 
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Doctor</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Verzekeraar</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="over.php">Contact</a>
-                </li>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Doctor</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Verzekeraar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="over.php">Contact</a>
+                    </li>
 
-            </ul>
-        </div>
-    </nav>
+                </ul>
+            </div>
+        </nav>
     </header>
     <main>
         <article>
