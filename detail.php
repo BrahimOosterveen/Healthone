@@ -35,8 +35,14 @@
                     <li class="nav-item">
                         <a class="nav-link" href="home.php">Home</a>
                     </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Apotheker</a>
+                    <li class="nav-item dropdown active">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Apotheker</a>
+                        <div class="dropdown-menu">
+                            <a href="sub-apotheker.php" class="dropdown-item">Patienten lijst</a>
+                            <a href="sub-apotheker-opgehaaldrecepten.php" class="dropdown-item">Opgehaalde recepten</a>
+                            <a href="sub-apotheker-afwachtenderecepten.php" class="dropdown-item">Afwachtende recepten</a>
+
+                        </div>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Doctor</a>
@@ -110,7 +116,7 @@
 
             <br>
             <br>
-            <a href="sub-apotheker.php"><button class="btn btn-primary" id="succesbtn-3" onclick="">Vorige pagina</button></a>
+            <a href="javascript:history.go(-1)"><button class="btn btn-primary" id="succesbtn-3" onclick="">Vorige pagina</button></a>
             <p id="demo"></p>
         </article>
     </main>

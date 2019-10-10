@@ -68,6 +68,7 @@
             if($result = mysqli_query($conn, $sql)){
                 if(mysqli_num_rows($result) > 0){
                     echo "<input type=\"text\" id=\"myInput\" onkeyup=\"myFunction()\" placeholder=\"Search for ID..\">";
+                    echo "<h4 class='shadow' style='padding: 10px;'>Patienten</h4>";
                     echo "<table id=\"table-1\" class=\"table table-striped\">";
                     echo "<thead>";
                     echo "<tr>";
