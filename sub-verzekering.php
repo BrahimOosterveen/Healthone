@@ -59,16 +59,26 @@
                     echo "<th scope=\"col\">Voornaam</th>";
                     echo "<th scope=\"col\">Achternaam</th>";
                     echo "<th scope=\"col\">Meer info</th>";
+                    echo "<th scope=\"col\">Aanpasssen</th>";
+                    echo "<th scope=\"col\">Verwijderen</th>";
                     echo "</tr>";
                     echo "</thead>";
                     echo "<tbody id=\"myTable\">";
+                    if(isset($_POST['submit'])){
+                        $query = $conn->prepare("DELETE FROM patient WHERE id = 4");
+                        $query->execute();
+                    }
                     while($row = mysqli_fetch_array($result)){
                         echo "<tr>";
                         echo "<td>" . $row['patientnummer'] . "</td>";
                         echo "<td>" . $row['naam'] . "</td>";
                         echo "<td>" . $row['achternaam'] . "</td>";
-                        echo "<td>
-                        <a href=verzeker-gegevens.php?id=" . $row['patientnummer']. "><button class=\"btn btn-info\" id=\"succesbtn-3\">Info</button></a>" . "</td>";
+                        //info
+                        echo "<td> <form method='post'> <input type='submit' name='submit' value='Info'></form>" . "</td>";
+                        //aanpassen
+                        echo "<td> <form method='post'> <input type='submit' name='submit' value='Aanpassen'></form>" . "</td>";
+                        //verwijderen
+                        echo "<td> <form method='post'> <input type='submit' name='submit' value='Verwijderen'></form>" . "</td>";
                         echo "</form>";
                         echo "</tr>";
                     }
@@ -119,42 +129,45 @@
         </tbody>
     </table>
 </div>
-<div class="container">
-    <h2>Artsen</h2>
-    <input class="form-control" id="artsenInput" type="text" placeholder="Search..">
-    <br>
-    <table class="table table-bordered table-striped">
-        <thead>
-        <tr>
-            <th>Voornaam</th>
-            <th>Achternaam</th>
-            <th>Informatie</th>
-        </tr>
-        </thead>
-        <tbody id="artsenTable">
-        <tr>
-            <td>Jan</td>
-            <td>Schouten</td>
-            <td><a href="Persoon.php">Meer informatie</a></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        </tbody>
-    </table>
-</div>
+    <?php
+    include 'databaseconnectie.php';
+    $sql = "SELECT id, artsid, naam, achternaam FROM artsen";
+    $result = mysqli_query($conn, $sql);
+
+    if($result = mysqli_query($conn, $sql)){
+        if(mysqli_num_rows($result) > 0){
+            echo "<input type=\"text\" id=\"myInput\" onkeyup=\"myFunction()\" placeholder=\"Search for ID..\">";
+            echo "<table class=\"table table-striped\">";
+            echo "<thead>";
+            echo "<tr>";
+            echo "<th scope=\"col\">Artsid</th>";
+            echo "<th scope=\"col\">Voornaam</th>";
+            echo "<th scope=\"col\">Achternaam</th>";
+            echo "<th scope=\"col\">Meer info</th>";
+            echo "</tr>";
+            echo "</thead>";
+            echo "<tbody id=\"myTable\">";
+            while($row = mysqli_fetch_array($result)){
+                echo "<tr>";
+                echo "<td>" . $row['artsid'] . "</td>";
+                echo "<td>" . $row['naam'] . "</td>";
+                echo "<td>" . $row['achternaam'] . "</td>";
+                echo "<td>
+                        <a href=arts-gegevens.php?id=" . $row['id']. "><button class=\"btn btn-info\" id=\"succesbtn-3\">Info</button></a>" . "</td>";
+                echo "</form>";
+                echo "</tr>";
+            }
+            echo "</tbody>";
+            echo "</table>";
+            // Free result set
+            mysqli_free_result($result);
+        } else{
+            echo "No records matching your query were found.";
+        }
+    } else{
+        echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+    }
+    ?>
 <script>
     $(document).ready(function(){
         $("#patientInput").on("keyup", function() {
