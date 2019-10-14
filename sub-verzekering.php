@@ -134,6 +134,7 @@
 
     if($result = mysqli_query($conn, $sql)){
         if(mysqli_num_rows($result) > 0){
+            echo "<td><a href=arts-gegevens.php" . "><button class=\"btn btn-info\" id=\"succesbtn-3\">Toevoegen</button></a>" . "</td>";
             echo "<input class='form-control' id='artsenInput' type='text' placeholder='Search..'>";
             echo "<table class=\"table table-striped\">";
             echo "<thead>";
@@ -142,6 +143,7 @@
             echo "<th scope=\"col\">Voornaam</th>";
             echo "<th scope=\"col\">Achternaam</th>";
             echo "<th scope=\"col\">Meer info</th>";
+            echo "<th scope=\"col\">Aanpassen</th>";
             echo "</tr>";
             echo "</thead>";
             echo "<tbody id=artsenTable>";
@@ -150,8 +152,8 @@
                 echo "<td>" . $row['artsid'] . "</td>";
                 echo "<td>" . $row['naam'] . "</td>";
                 echo "<td>" . $row['achternaam'] . "</td>";
-                echo "<td>
-                        <a href=arts-gegevens.php?id=" . $row['id']. "><button class=\"btn btn-info\" id=\"succesbtn-3\">Info</button></a>" . "</td>";
+                echo "<td><a href=arts-gegevens.php?id=" . $row['id']. "><button class=\"btn btn-info\" id=\"succesbtn-3\">Info</button></a>" . "</td>";
+                echo "<td><a href=arts-verzeker.php?id=" . $row['id']. "><button class=\"btn btn-info\" id=\"succesbtn-3\">Aanpassen</button></a>" . "</td>";
                 echo "</form>";
                 echo "</tr>";
             }

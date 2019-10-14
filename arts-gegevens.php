@@ -54,7 +54,6 @@
 
         if($result = mysqli_query($conn, $sql)){
             if(mysqli_num_rows($result) > 0){
-                echo "<input type=\"text\" id=\"myInput\" onkeyup=\"myFunction()\" placeholder=\"Search for ID..\">";
                 echo "<table id=\"table-1\" class=\"table table-striped\">";
                 echo "<thead>";
                 echo "<tr>";
@@ -89,43 +88,10 @@
         } else {
         }
         ?>
-
-        <form method="post" action="">
-            <table class="table table-bordered table-striped">
-                <thead>
-                    <tr>
-                        <th>Voornaam</th>
-                        <th>Achternaam</th>
-                        <th>adres</th>
-                        <th>Telefoonnummner</th>
-                        <th>Specialiteit</th>
-                        <th>Aanpassen</th>
-                    </tr>
-                </thead>
-                    <td> <input type="text" name="voornaam"></td>
-                    <td> <input type="text" name="achternaam"></td>
-                    <td> <input type="text" name="adres"></td>
-                    <td> <input type="text" name="telefoonnummer"></td>
-                    <td> <input type="text" name="specialiteit"></td>
-                    <td> <input type="submit" name="aanpassen"></td>
-            </table>
-        </form>
         <a href="sub-verzekering.php"><button class="btn btn-primary" id="succesbtn-3" onclick="">Vorige pagina</button></a>
-        <p id="demo"></p>
     </article>
 </main>
 </div>
-<?php
-//UPDATE table_name SET column1=value, column2=value2,... WHERE column_name=some_value
-
-
-if (isset($_POST['aanpassen'])) {
-    $patient_id = $_GET['id'];
-    $voornaam = filter_input(INPUT_POST, "voornaam", FILTER_SANITIZE_STRING);
-    $query1 = $db->prepare("UPDATE artsen SET naam = '$voornaam' WHERE  id = 'patient_id'");
-    $query1->execute;
-}
-?>
 
 
 <footer id="sticky-footer" class="py-4 bg-secondary text-white-50">
