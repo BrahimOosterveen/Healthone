@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="04973541-9fbd-4e8d-8acc-6651e97df950" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/arts-gegevens.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/patient-verzeker.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/databaseconnectie.php" beforeDir="false" afterPath="$PROJECT_DIR$/databaseconnectie.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sub-verzekering.php" beforeDir="false" afterPath="$PROJECT_DIR$/sub-verzekering.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,7 +36,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="HTML" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../H7" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
@@ -94,7 +93,8 @@
       <workItem from="1570616065530" duration="633000" />
       <workItem from="1570694166581" duration="1884000" />
       <workItem from="1570698272632" duration="117000" />
-      <workItem from="1570698468113" duration="6446000" />
+      <workItem from="1570698468113" duration="7222000" />
+      <workItem from="1571034834191" duration="1524000" />
     </task>
     <servers />
   </component>

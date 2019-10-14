@@ -59,26 +59,27 @@
                     echo "<th scope=\"col\">Voornaam</th>";
                     echo "<th scope=\"col\">Achternaam</th>";
                     echo "<th scope=\"col\">Meer info</th>";
-                    echo "<th scope=\"col\">Aanpasssen</th>";
+                    echo "<th scope=\"col\">Aanpassen</th>";
                     echo "<th scope=\"col\">Verwijderen</th>";
                     echo "</tr>";
                     echo "</thead>";
                     echo "<tbody id=\"myTable\">";
-                    if(isset($_POST['submit'])){
+                    if(isset($_POST['verwijder'])){
                         $query = $conn->prepare("DELETE FROM patient WHERE id = 4");
                         $query->execute();
                     }
+
                     while($row = mysqli_fetch_array($result)){
                         echo "<tr>";
                         echo "<td>" . $row['patientnummer'] . "</td>";
                         echo "<td>" . $row['naam'] . "</td>";
                         echo "<td>" . $row['achternaam'] . "</td>";
                         //info
-                        echo "<td> <form method='post'> <input type='submit' name='submit' value='Info'></form>" . "</td>";
+                        echo "<td><a href=verzeker-gegevens.php?id=" . $row['patientnummer']. "><button class=\"btn btn-info\" id=\"succesbtn-3\">Info</button></a>" . "</td>";
                         //aanpassen
-                        echo "<td> <form method='post'> <input type='submit' name='submit' value='Aanpassen'></form>" . "</td>";
+                        echo "<td><a href=patient-verzeker.php?id=" . $row['patientnummer']. "><button class=\"btn btn-info\" id=\"succesbtn-3\">Info</button></a>" . "</td>";
                         //verwijderen
-                        echo "<td> <form method='post'> <input type='submit' name='submit' value='Verwijderen'></form>" . "</td>";
+                        echo "<td> <form method='post'> <input type='submit' name='verwijder' value='Verwijderen'></form>" . "</td>";
                         echo "</form>";
                         echo "</tr>";
                     }

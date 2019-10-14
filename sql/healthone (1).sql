@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 07 okt 2019 om 09:34
+-- Gegenereerd op: 14 okt 2019 om 09:06
 -- Serverversie: 10.4.6-MariaDB
 -- PHP-versie: 7.3.9
 
@@ -79,6 +79,32 @@ INSERT INTO `apotheker` (`id`, `Naam`, `Achternaam`, `Geboortedatum`, `Medicijne
 -- --------------------------------------------------------
 
 --
+-- Tabelstructuur voor tabel `artsen`
+--
+
+CREATE TABLE `artsen` (
+  `id` int(11) NOT NULL,
+  `artsid` int(11) NOT NULL,
+  `naam` varchar(255) NOT NULL,
+  `achternaam` varchar(255) NOT NULL,
+  `adres` varchar(255) NOT NULL,
+  `telefoonnummer` int(11) NOT NULL,
+  `specialiteit` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `artsen`
+--
+
+INSERT INTO `artsen` (`id`, `artsid`, `naam`, `achternaam`, `adres`, `telefoonnummer`, `specialiteit`) VALUES
+(1, 1001, 'Jan', 'Schouten', 'dorpstraat 123', 655443322, 'hart'),
+(2, 1002, 'Iza', 'Borghuis', 'dorpstraat 124', 655443311, 'hersenen'),
+(3, 1003, 'Emilius', 'Held', 'computernerdlaan 12', 655443388, 'long'),
+(4, 1004, 'Viktor', 'van der Sman', 'smanstraat 789', 655443399, 'botbreuken');
+
+-- --------------------------------------------------------
+
+--
 -- Tabelstructuur voor tabel `medicijn`
 --
 
@@ -141,6 +167,12 @@ ALTER TABLE `apotheker`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexen voor tabel `artsen`
+--
+ALTER TABLE `artsen`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexen voor tabel `medicijn`
 --
 ALTER TABLE `medicijn`
@@ -163,6 +195,12 @@ ALTER TABLE `apotheker`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100001;
 
 --
+-- AUTO_INCREMENT voor een tabel `artsen`
+--
+ALTER TABLE `artsen`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT voor een tabel `medicijn`
 --
 ALTER TABLE `medicijn`
@@ -172,7 +210,7 @@ ALTER TABLE `medicijn`
 -- AUTO_INCREMENT voor een tabel `patient`
 --
 ALTER TABLE `patient`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
