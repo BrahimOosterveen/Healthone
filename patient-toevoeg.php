@@ -48,37 +48,30 @@
 <main>
     <article>
         <?php
-        try {
             include 'database2.php';
-            $sql = $db->prepare("SELECT patientnummer, naam, achternaam, geboortedatum, telefoonnummer, recept FROM patient WHERE id=" . $_GET['id']);
-            $sql->execute();
-        } catch (PDOException $e) {
-            die("Error!: " . $e->getmessage());
-        }
-        $result = $sql->fetchALL(PDO::FETCH_ASSOC);
-        if ($sql->rowCount() > 0) {
             echo "<table id=\"table-1\" class=\"table table-striped\">";
             echo "<thead>";
             echo "<tr>";
+            echo "<th scope=\"col\">Patientnummer</th>";
             echo "<th scope=\"col\">Voornaam</th>";
             echo "<th scope=\"col\">Achternaam</th>";
+            echo "<th scope=\"col\">Geboortedatum</th>";
             echo "<th scope=\"col\">telefoonnummer</th>";
-            echo "<th scope=\"col\">Aanpassen</th>";
-            echo "<th scope=\"col\">Verwijder</th>";
+            echo "<th scope=\"col\">Toevoegen</th>";
             echo "</tr>";
             echo "</thead>";
-            if (isset($_POST['aanpas'])) {
+            if (isset($_POST['toev'])) {
+                $patientnummer = $_POST['patientnummer'];
                 $naam = $_POST['naam'];
                 $achternaam = $_POST['achternaam'];
+                $geboortedatum = $_POST['geboortedatum'];
                 $telnummer = $_POST['telnummer'];
-                $query = $db->prepare("UPDATE patient SET naam = :naam,
-                                                                       achternaam = :achternaam , 
-                                                                       telefoonnummer = :telnummer
-                                                                       WHERE id = :id");
+                $query = $db->prepare("INSERT INTO patient (patientnummer, naam, achternaam, geboortedatum, telefoonnummer) VALUES (:patientnummer, :naam, :achternaam, :geboortedatum, :telnummer)") ;
+                $query->bindparam("patientnummer", $patientnummer);
                 $query->bindparam("naam", $naam);
                 $query->bindparam("achternaam", $achternaam);
+                $query->bindparam("geboortedatum", $geboortedatum);
                 $query->bindparam("telnummer", $telnummer);
-                $query->bindparam("id", $_GET['id']);
                 if ($query->execute()) {
                     echo "De nieuwe gegevens zijn toegevoegd";
 
@@ -86,33 +79,20 @@
                     echo "Er is een fout opgetreden!";
                 }
             }
-            if(isset($_POST['verwijder'])){
-                $query = $db->prepare("DELETE FROM patient WHERE id = :id");
-                $query->bindparam("id", $_GET['id']);
-                $query->execute();
-            }
-            $query = $db->prepare("SELECT * FROM patient WHERE id = :id");
-            $query->bindparam("id", $_GET['id']);
-            $query->execute();
-            $result = $query->fetchALL(PDO::FETCH_ASSOC);
             echo "<form method='post'>";
-            foreach ($result as &$data) {
                 echo "<tr>";
-                echo "<td> <input type='text' name='naam' value='" . $data['naam'] . "'></td>";
-                echo "<td> <input type='text' name='achternaam' value='" . $data['achternaam'] . "'></td>";
-                echo "<td> <input type='text' name='telnummer' value='" . $data['telefoonnummer'] . "'></td>";
-                echo "<td> <input type='submit' class='btn btn-primary' name='aanpas' value='Aanpassen'>" . "</td>";
-                echo "<td> <input type='submit' class='btn btn-danger' name='verwijder' value='Verwijder'>" . "</td>";
+                echo "<td> <input type='text' name='patientnummer' value='" . 'Patientnummer' . "'></td>";
+                echo "<td> <input type='text' name='naam' value='" . 'Naam' . "'></td>";
+                echo "<td> <input type='text' name='achternaam' value='" .'Achternaam' . "'></td>";
+                echo "<td> <input type='text' name='geboortedatum' value='" . 'jaar-md-da' . "'></td>";
+                echo "<td> <input type='text' name='telnummer' value='" . 'Telefoonnummer' . "'></td>";
+                echo "<td> <input type='submit' class='btn btn-primary' name='toev' value='Toevoegen'>" . "</td>";
                 echo "</tr>";
-            }
             echo "</form>";
 
 
             echo "</table>";
             // Free result set
-        } else {
-            echo "No records matching your query were found.";
-        }
 
         ?>
         <a href="sub-verzekering.php">

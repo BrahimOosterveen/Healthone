@@ -51,7 +51,8 @@
 
             if($result = mysqli_query($conn, $sql)){
                 if(mysqli_num_rows($result) > 0){
-                    echo "<input type=\"text\" id=\"myInput\" onkeyup=\"myFunction()\" placeholder=\"Search for ID..\">";
+                    echo "<td><a href=patient-toevoeg.php" . "><button class=\"btn btn-info\" id=\"succesbtn-3\">Toevoegen</button></a>" . "</td>";
+                    echo "<input class='form-control' id='patientInput' type='text' placeholder='Search..'>";
                     echo "<table class=\"table table-striped\">";
                     echo "<thead>";
                     echo "<tr>";
@@ -60,14 +61,9 @@
                     echo "<th scope=\"col\">Achternaam</th>";
                     echo "<th scope=\"col\">Meer info</th>";
                     echo "<th scope=\"col\">Aanpassen</th>";
-                    echo "<th scope=\"col\">Verwijderen</th>";
                     echo "</tr>";
                     echo "</thead>";
-                    echo "<tbody id=\"myTable\">";
-                    if(isset($_POST['verwijder'])){
-                        $query = $conn->prepare("DELETE FROM patient WHERE id = 4");
-                        $query->execute();
-                    }
+                    echo "<tbody id='patientTable' >";
 
                     while($row = mysqli_fetch_array($result)){
                         echo "<tr>";
@@ -77,9 +73,8 @@
                         //info
                         echo "<td><a href=verzeker-gegevens.php?id=" . $row['patientnummer']. "><button class=\"btn btn-info\" id=\"succesbtn-3\">Info</button></a>" . "</td>";
                         //aanpassen
-                        echo "<td><a href=patient-verzeker.php?id=" . $row['patientnummer']. "><button class=\"btn btn-info\" id=\"succesbtn-3\">Info</button></a>" . "</td>";
+                        echo "<td><a href=patient-verzeker.php?id=" . $row['patientnummer']. "><button class=\"btn btn-info\" id=\"succesbtn-3\">Aanpassen</button></a>" . "</td>";
                         //verwijderen
-                        echo "<td> <form method='post'> <input type='submit' name='verwijder' value='Verwijderen'></form>" . "</td>";
                         echo "</form>";
                         echo "</tr>";
                     }
@@ -94,6 +89,7 @@
                 echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
             }
             ?>
+
 <div class="container">
     <h2>Medicijnen</h2>
     <input class="form-control" id="medicijnenInput" type="text" placeholder="Search..">
@@ -130,6 +126,7 @@
         </tbody>
     </table>
 </div>
+    <h2>Dokters</h2>
     <?php
     include 'databaseconnectie.php';
     $sql = "SELECT id, artsid, naam, achternaam FROM artsen";
@@ -137,7 +134,7 @@
 
     if($result = mysqli_query($conn, $sql)){
         if(mysqli_num_rows($result) > 0){
-            echo "<input type=\"text\" id=\"myInput\" onkeyup=\"myFunction()\" placeholder=\"Search for ID..\">";
+            echo "<input class='form-control' id='artsenInput' type='text' placeholder='Search..'>";
             echo "<table class=\"table table-striped\">";
             echo "<thead>";
             echo "<tr>";
@@ -147,7 +144,7 @@
             echo "<th scope=\"col\">Meer info</th>";
             echo "</tr>";
             echo "</thead>";
-            echo "<tbody id=\"myTable\">";
+            echo "<tbody id=artsenTable>";
             while($row = mysqli_fetch_array($result)){
                 echo "<tr>";
                 echo "<td>" . $row['artsid'] . "</td>";
