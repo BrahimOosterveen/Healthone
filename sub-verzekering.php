@@ -41,6 +41,11 @@
         </ul>
     </div>
 </nav>
+<style>
+    .scrollable {
+        height: 350px; /* or any value */
+        overflow-y: auto;
+    }</style>
 <div class="container">
     <h2>Patienten</h2>
     <?php
@@ -53,6 +58,7 @@
                 if(mysqli_num_rows($result) > 0){
                     echo "<td><a href=patient-toevoeg.php" . "><button class=\"btn btn-info\" id=\"succesbtn-3\">Toevoegen</button></a>" . "</td>";
                     echo "<input class='form-control' id='patientInput' type='text' placeholder='Search..'>";
+                    echo "<div class='scrollable'>";
                     echo "<table class=\"table table-striped\">";
                     echo "<thead>";
                     echo "<tr>";
@@ -80,6 +86,7 @@
                     }
                     echo "</tbody>";
                     echo "</table>";
+                    echo "</div>";
                     // Free result set
                     mysqli_free_result($result);
                 } else{
@@ -126,7 +133,7 @@
         </tbody>
     </table>
 </div>
-    <h2>Dokters</h2>
+    <h2>Artsen</h2>
     <?php
     include 'databaseconnectie.php';
     $sql = "SELECT id, artsid, naam, achternaam FROM artsen";
@@ -134,8 +141,9 @@
 
     if($result = mysqli_query($conn, $sql)){
         if(mysqli_num_rows($result) > 0){
-            echo "<td><a href=arts-gegevens.php" . "><button class=\"btn btn-info\" id=\"succesbtn-3\">Toevoegen</button></a>" . "</td>";
+            echo "<td><a href=arts-toevoeg.php" . "><button class=\"btn btn-info\" id=\"succesbtn-3\">Toevoegen</button></a>" . "</td>";
             echo "<input class='form-control' id='artsenInput' type='text' placeholder='Search..'>";
+            echo "<div class='scrollable'>";
             echo "<table class=\"table table-striped\">";
             echo "<thead>";
             echo "<tr>";
@@ -159,6 +167,7 @@
             }
             echo "</tbody>";
             echo "</table>";
+            echo "</div>";
             // Free result set
             mysqli_free_result($result);
         } else{
@@ -200,8 +209,5 @@
         });
     });
 </script>
-<?php
-
-?>
 </body>
 </html>

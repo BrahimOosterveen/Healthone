@@ -50,7 +50,7 @@
         <?php
         try {
             include 'database2.php';
-            $sql = $db->prepare("SELECT patientnummer, naam, achternaam, geboortedatum, telefoonnummer, recept FROM patient WHERE id=" . $_GET['id']);
+            $sql = $db->prepare("SELECT artsid, naam, achternaam, adres, telefoonnummer, specialiteit FROM artsen WHERE id=" . $_GET['id']);
             $sql->execute();
         } catch (PDOException $e) {
             die("Error!: " . $e->getmessage());
@@ -70,14 +70,20 @@
             if (isset($_POST['aanpas'])) {
                 $naam = $_POST['naam'];
                 $achternaam = $_POST['achternaam'];
+                $adres = $_POST['adres'];
                 $telnummer = $_POST['telnummer'];
-                $query = $db->prepare("UPDATE patient SET naam = :naam,
+                $specialiteit = $_POST['specialiteit'];
+                $query = $db->prepare("UPDATE artsen SET     naam = :naam,
                                                                        achternaam = :achternaam , 
-                                                                       telefoonnummer = :telnummer
+                                                                       adres = :adres ,
+                                                                       telefoonnummer = :telnummer ,
+                                                                       specialiteit = :specialiteit
                                                                        WHERE id = :id");
                 $query->bindparam("naam", $naam);
                 $query->bindparam("achternaam", $achternaam);
+                $query->bindparam("adres", $adres);
                 $query->bindparam("telnummer", $telnummer);
+                $query->bindparam("specialietit", $specialiteit);
                 $query->bindparam("id", $_GET['id']);
                 if ($query->execute()) {
                     echo "De nieuwe gegevens zijn toegevoegd";
@@ -87,11 +93,11 @@
                 }
             }
             if(isset($_POST['verwijder'])){
-                $query = $db->prepare("DELETE FROM patient WHERE id = :id");
+                $query = $db->prepare("DELETE FROM artsen WHERE id = :id");
                 $query->bindparam("id", $_GET['id']);
                 $query->execute();
             }
-            $query = $db->prepare("SELECT * FROM patient WHERE id = :id");
+            $query = $db->prepare("SELECT * FROM artsen WHERE id = :id");
             $query->bindparam("id", $_GET['id']);
             $query->execute();
             $result = $query->fetchALL(PDO::FETCH_ASSOC);
@@ -100,7 +106,9 @@
                 echo "<tr>";
                 echo "<td> <input type='text' name='naam' value='" . $data['naam'] . "'></td>";
                 echo "<td> <input type='text' name='achternaam' value='" . $data['achternaam'] . "'></td>";
+                echo "<td> <input type='text' name='adres' value='" . $data['adres'] . "'></td>";
                 echo "<td> <input type='text' name='telnummer' value='" . $data['telefoonnummer'] . "'></td>";
+                echo "<td> <input type='text' name='specialiteit' value='" . $data['specialiteit'] . "'></td>";
                 echo "<td> <input type='submit' class='btn btn-primary' name='aanpas' value='Aanpassen'>" . "</td>";
                 echo "<td> <input type='submit' class='btn btn-danger' name='verwijder' value='Verwijder'>" . "</td>";
                 echo "</tr>";
