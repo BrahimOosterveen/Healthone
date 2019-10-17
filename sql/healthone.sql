@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 14 okt 2019 om 09:06
+-- Gegenereerd op: 17 okt 2019 om 12:58
 -- Serverversie: 10.4.6-MariaDB
 -- PHP-versie: 7.3.9
 
@@ -88,7 +88,7 @@ CREATE TABLE `artsen` (
   `naam` varchar(255) NOT NULL,
   `achternaam` varchar(255) NOT NULL,
   `adres` varchar(255) NOT NULL,
-  `telefoonnummer` int(11) NOT NULL,
+  `telefoonnummer` varchar(11) NOT NULL,
   `specialiteit` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -97,10 +97,13 @@ CREATE TABLE `artsen` (
 --
 
 INSERT INTO `artsen` (`id`, `artsid`, `naam`, `achternaam`, `adres`, `telefoonnummer`, `specialiteit`) VALUES
-(1, 1001, 'Jan', 'Schouten', 'dorpstraat 123', 655443322, 'hart'),
-(2, 1002, 'Iza', 'Borghuis', 'dorpstraat 124', 655443311, 'hersenen'),
-(3, 1003, 'Emilius', 'Held', 'computernerdlaan 12', 655443388, 'long'),
-(4, 1004, 'Viktor', 'van der Sman', 'smanstraat 789', 655443399, 'botbreuken');
+(1, 1001, 'Jan', 'Schouten', 'dorpstraat 123', '655443322', 'hart'),
+(2, 1002, 'Iza', 'Borghuis', 'dorpstraat 124', '655443311', 'hersenen'),
+(3, 1003, 'Emilius', 'Held', 'computernerdlaan 12', '655443388', 'long'),
+(4, 1004, 'Viktor', 'van der Sman', 'smanstraat 789', '655443399', 'botbreuken'),
+(5, 1005, 'Arthur', 'Morgan', 'kampstraat 198', '21466785', 'botbreuken'),
+(6, 1005, 'Hosea', 'Mathews', 'kampstraat 160', '2146678533', 'huisarts'),
+(7, 1007, 'Leopold', 'Straus', 'Kampstraat 133', '06-33227749', 'Huisarts');
 
 -- --------------------------------------------------------
 
@@ -154,7 +157,11 @@ CREATE TABLE `patient` (
 
 INSERT INTO `patient` (`id`, `patientnummer`, `naam`, `achternaam`, `geboortedatum`, `telefoonnummer`, `medicijnen`, `recept`) VALUES
 (1, '0001', 'Brahim', 'Oosterveen', '2001-12-22', '06-49700573', '', ''),
-(2, '0002', 'Carlos', 'Miguel', '2002-01-10', '06-23600583', '', '');
+(2, '0002', 'Carlos', 'Oosterveen', '2001-12-22', '06-49700573', '', ''),
+(6, '0006', 'Weiki', 'Zhou', '2002-12-25', '06-24693741', '', ''),
+(7, '0007', 'Wesley', 'Schaegen', '2002-06-25', '06-36482295', '', ''),
+(8, '0008', 'Timo', 'van Zuijlen', '2002-09-29', '06-57548758', '', ''),
+(9, '0009', 'Ferdinand', 'de LangÃ©', '1996-12-27', '06-87654325', '', '');
 
 --
 -- Indexen voor geëxporteerde tabellen
@@ -198,7 +205,7 @@ ALTER TABLE `apotheker`
 -- AUTO_INCREMENT voor een tabel `artsen`
 --
 ALTER TABLE `artsen`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT voor een tabel `medicijn`
@@ -210,7 +217,7 @@ ALTER TABLE `medicijn`
 -- AUTO_INCREMENT voor een tabel `patient`
 --
 ALTER TABLE `patient`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
