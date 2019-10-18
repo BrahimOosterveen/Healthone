@@ -53,7 +53,10 @@
                         <a class="nav-link" href="over.php">Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="login.php">Login</a>
+                        <a class="nav-link" href="logout.php">Logout</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="reset-password.php">Reset Password</a>
                     </li>
                 </ul>
             </div>
