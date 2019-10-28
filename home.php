@@ -21,7 +21,12 @@
         </div>
     </div>
 </div>
-<nav class="navbar navbar-expand-sm bg-light navbar-light sticky-top">
+    <style>
+        nav {
+            background-color: orange;
+        }
+    </style>
+<nav class="navbar navbar-expand-sm navbar-light sticky-top">
     <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -40,7 +45,7 @@
                 <a class="nav-link" href="sub-dokter.php">Dokter</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="sub-verzekering.php">Verzekeraar</a>
+                <a class="nav-link" href="#">Verzekeraar</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="over.php">Contact</a>
@@ -54,17 +59,17 @@
         <div id="article" class="col-md-4">
             <img  id="geldzaken" src="foto/Dokter.jpg" alt="foto">
             <h2>Dokter</h2>
-            <button type="button" class="btn btn-info btn-block">Inloggen</button>
+            <button type="button" class="btn btn-warning btn-block">Inloggen</button>
         </div>
         <div id="article" class="col-md-4">
             <img id="geldzaken" src="foto/Apotheker.jpg" alt="foto">
             <h2>Apotheker</h2>
-            <button type="button" class="btn btn-info btn-block">Inloggen</button>
+            <button type="button" class="btn btn-warning btn-block">Inloggen</button>
         </div>
         <div id="article" class="col-md-4">
             <img  id="geldzaken" src="foto/Verzekeraar.jpg" alt="foto">
             <h2>Verzekeraar</h2>
-            <button type="button" class="btn btn-info btn-block">Inloggen</button>
+            <button type="button" class="btn btn-warning btn-block">Inloggen</button>
         </div>
             </div>
         </div>
