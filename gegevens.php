@@ -35,11 +35,16 @@
                     <li class="nav-item">
                         <a class="nav-link" href="home.php">Home</a>
                     </li>
-                    <li class="nav-item active">
+                    <li class="nav-item ">
                         <a class="nav-link" href="sub-apotheker.php">Apotheker</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="sub-dokter.php">Doctor</a>
+                    <li class="nav-item dropdown active">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Dokter</a>
+                        <div class="dropdown-menu">
+                            <a href="sub-dokter.php" class="dropdown-item">Dokter</a>
+                            <a href="medicijnen.php" class="dropdown-item">Medicijnen</a>
+
+                        </div>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="sub-verzekering.php">Verzekeraar</a>
@@ -55,48 +60,93 @@
     <main>
         <article>
             <?php
-            include 'databaseconnectie.php';
-            $sql = "SELECT patientnummer, naam, achternaam, geboortedatum, telefoonnummer, medicijnen, recept FROM patient WHERE id=" . $_GET['id'];
-            $result = mysqli_query($conn, $sql);
+            $db = new PDO("mysql:host=localhost;dbname=healthone", "root","");
+            $query = $db->prepare("SELECT * FROM patient WHERE id=" . $_GET['id']) ;
+            $query->execute();
+            $result = $query->fetchAll(PDO::FETCH_ASSOC);
 
-            if($result = mysqli_query($conn, $sql)){
-                if(mysqli_num_rows($result) > 0){
-                    echo "<input type=\"text\" id=\"myInput\" onkeyup=\"myFunction()\" placeholder=\"Search for ID..\">";
-                    echo "<table id=\"table-1\" class=\"table table-striped\">";
-                    echo "<thead>";
-                    echo "<tr>";
-                    echo "<th scope=\"col\">id</th>";
-                    echo "<th scope=\"col\">Voornaam</th>";
-                    echo "<th scope=\"col\">Achternaam</th>";
-                    echo "<th scope=\"col\">Geboortedatum</th>";
-                    echo "<th scope=\"col\">telefoonnummer</th>";
-                    echo "<th scope=\"col\">medicijnen</th>";
-                    echo "<th scope=\"col\">recept</th>";
-                    echo "</tr>";
-                    echo "</thead>";
-                    while($row = mysqli_fetch_array($result)){
-                        echo "<tr>";
-                        echo "<td>" . $row['patientnummer'] . "</td>";
-                        echo "<td>" . $row['naam'] . "</td>";
-                        echo "<td>" . $row['achternaam'] . "</td>";
-                        echo "<td>" . $row['geboortedatum'] . "</td>";
-                        echo "<td>" . $row['telefoonnummer'] . "</td>";
-                        echo "<td> <input type=\"text\" name=\"naam\"> </td>";
-                        echo "<td>" . $row['recept'] . "</td>";
-                        echo "</tr>";
-                    }
-                    echo "</table>";
-                    // Free result set
-                    mysqli_free_result($result);
-                } else{
-                    echo "No records matching your query were found.";
-                }
-            } else{
-                echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
+
+            foreach ($result as &$data) {
+                ?>
+            <table id="table-1" class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope=\"col\">id</th>
+                    <th scope=\"col\">Voornaam</th>
+                    <th scope=\"col\">Achternaam</th>
+                    <th scope=\"col\">Geboortedatum</th>
+                    <th scope=\"col\">telefoonnummer</th>
+                    <th scope=\"col\">recept</th>
+                </tr>
+                </thead>
+                <tr>
+                    <td><?php echo $data['patientnummer']?></td>
+                    <td><?php echo $data['naam']?></td>
+                    <td><?php echo $data['achternaam']?></td>
+                    <td><?php echo $data['geboortedatum']?></td>
+                    <td><?php echo $data['telefoonnummer']?></td>
+                    <td> <a href=recept.php?id=<?php echo $_GET['id'] ?>><button class="btn btn-info" id="succesbtn-3">Maken</button></a></td>
+
+                <?php
             }
             ?>
+
+
+
+</table>
             <a href="sub-dokter.php"><button class="btn btn-primary" id="succesbtn-3" onclick="">Vorige pagina</button></a>
-            <p id="demo"></p>
+            <br><br>
+            <?php
+            $id = $_GET['id'];
+            $db = new PDO("mysql:host=localhost;dbname=healthone", "root","");
+            $query1 = $db->prepare("SELECT * FROM recept where patientnummer = '$id'");
+            $query1->execute();
+            $result1 = $query1->fetchAll(PDO::FETCH_ASSOC);
+
+            ?>
+
+                    <table id="table-2" class="table table-striped">
+                    <thead>
+                    <tr>
+                    <th scope="col">Recept</th>
+                    <th scope="col">Medicijn nummer</th>
+                    <th scope="col">lengte </th>
+                    <th scope="col">herhaling</th>
+                    <th scope="col">dosering</th>
+                        <th scope="col">berichten</th>
+                        <th scope="col">Verwijderen</th>
+                    </tr>
+                    </thead>
+                        <?php
+                        echo "<form method='post' action='verwijder.php'>";
+//                        if(isset($_POST['verwijder'])){
+//                            $query = $db->prepare("DELETE FROM recept WHERE id = 'id'");
+//                            $query->bindparam("id", $_GET['id']);
+//                            $query->execute();
+//                        }
+                        foreach ($result1 as &$data){
+                        ?>
+                        <tr>
+                            <td> <?php echo $data['id'] ?> </td>
+                            <td><?php echo $data['mid'] ?> </td>
+                            <td><?php echo $data['lengte'] ?></td>
+                             <td><?php if ($data['herhaling'] == 1){
+                                     echo 'ja';
+                                 } else echo 'nee';?> </td>
+                        <td><?php echo $data['dosering'] ?> </td>
+                            <td><?php echo $data['bericht'] ?> </td>
+<!--                            <td> <input type='submit' class='btn btn-danger' name='verwijder' value='Verwijder'></td>-->
+                            <td><a href="sub-dokter.php"><button class="btn btn-danger" id="succesbtn-3" onclick="">verwijderen</button></a> </td>
+                        </tr>
+                            <?php
+                        }
+                        echo "</form>";
+                        ?>
+                    </table>
+
+
+
+
         </article>
     </main>
 </div>

@@ -23,6 +23,7 @@ body,html {
     height: 100%;
     width: 100%;
     display: table;
+    background-color: orange;
 }
 footer{
     background-color: grey;
@@ -30,6 +31,7 @@ footer{
     height: 0;
     bottom: 0;
 }
+
 
 
 
