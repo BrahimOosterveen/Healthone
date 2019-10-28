@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="04973541-9fbd-4e8d-8acc-6651e97df950" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/arts-toevoeg.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/arts-verzeker.php" beforeDir="false" afterPath="$PROJECT_DIR$/arts-verzeker.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sub-verzekering.php" beforeDir="false" afterPath="$PROJECT_DIR$/sub-verzekering.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/home.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,7 +35,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="HTML" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../untitled" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -103,7 +101,8 @@
       <workItem from="1570698468113" duration="7222000" />
       <workItem from="1571034834191" duration="15163000" />
       <workItem from="1571228127241" duration="604000" />
-      <workItem from="1571294063261" duration="7434000" />
+      <workItem from="1571294063261" duration="8083000" />
+      <workItem from="1572252520500" duration="560000" />
     </task>
     <servers />
   </component>
